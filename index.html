@@ -1,2 +1,211 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Sybiz Vision Help — Prototype Map</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600&display=swap" rel="stylesheet"><style>
-:root{--navy:#0A1133;--teal-tint:#E9F8F7;--teal-line:#B7E7E5;--teal-dark:#0E5A58;--text:#1F2430;--text-2:#4B5563;--text-3:#8A94A6;--line:#E3E7EE;--font-body:'Inter',sans-serif;--font-head:'Poppins',sans-serif;}*{box-sizing:border-box;margin:0;padding:0}body{font-family:var(--font-body);background:#EDF0F4;color:var(--text);padding:30px}.wrap{max-width:900px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}.head{background:var(--navy);color:#fff;padding:22px 26px}.head h1{font-family:var(--font-head);font-size:22px}.head p{color:#B9C2D6;font-size:13px;margin-top:6px}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;padding:24px 26px}.card{border:1px solid var(--line);border-radius:12px;padding:18px;text-decoration:none;color:var(--text);background:#fff}.card:hover{border-color:var(--teal-line);background:#FBFEFD}.card h2{font-family:var(--font-head);font-size:15px;margin-bottom:6px}.card p{font-size:12.5px;color:var(--text-2);line-height:1.55}.tag{display:inline-block;font-size:10px;font-weight:700;color:var(--teal-dark);background:var(--teal-tint);border:1px solid var(--teal-line);border-radius:999px;padding:3px 8px;margin-bottom:10px}</style></head><body><div class="wrap"><div class="head"><h1>Sybiz Vision Help — presentation prototype</h1><p>Use this map for review. The Home and category-card design is kept as the near-final visual direction; added pages explain the task-based TOC logic.</p></div><div class="grid"><a class="card" href="sybiz_help_home.html"><span class="tag">Start here</span><h2>Home</h2><p>Near-final Home/card design with five entry points.</p></a><a class="card" href="sybiz_user_guide_landing.html"><span class="tag">Flow</span><h2>Workflow-Based User Guide</h2><p>Shows business-area cards using the same visual pattern.</p></a><a class="card" href="sybiz_landing_sales_order.html"><span class="tag">Example</span><h2>Sales and Order Management</h2><p>Page explanation, user task flow, task-based TOC cards, and selected TOC detail panel.</p></a><a class="card" href="sybiz_topic_preview.html"><span class="tag">Topic</span><h2>Topic preview</h2><p>Sample topic destination with tabbed How to / Result / Next step / Ribbon & Menu content.</p></a><a class="card" href="sybiz_landing_getting_started.html"><span class="tag">Guide home</span><h2>Getting Started</h2><p>Home/card landing with first-use task-based TOC groups.</p></a><a class="card" href="sybiz_landing_setup_admin.html"><span class="tag">Guide home</span><h2>Setup and Administration</h2><p>Home/card landing with setup/admin TOC flow groups.</p></a><a class="card" href="sybiz_landing_customisation.html"><span class="tag">Guide home</span><h2>Customisation</h2><p>Home/card landing showing business-change TOC groups.</p></a><a class="card" href="sybiz_glossary_landing.html"><span class="tag">Guide home</span><h2>Glossary</h2><p>Concept-group landing to explain how glossary supports workflow topics.</p></a><a class="card" href="sybiz_job_based_aids.html"><span class="tag">Role lens</span><h2>Role-Based Job Aids</h2><p>Shows role shortcut layer over the same workflow topics.</p></a></div></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sybiz Vision Help Redesign — Prototype Review Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0A1133;
+  --blue:#2E71A1;
+  --blue-soft:#EAF2FB;
+  --teal:#50C3C0;
+  --teal-tint:#E9F8F7;
+  --teal-line:#B7E7E5;
+  --teal-dark:#0E5A58;
+  --green:#6FBF73;
+  --amber:#FBF1DC;
+  --amber-line:#E0B96E;
+  --text:#1F2430;
+  --text-2:#4B5563;
+  --text-3:#8A94A6;
+  --line:#E3E7EE;
+  --bg:#EDF0F4;
+  --bg-soft:#F6F8FA;
+  --font-body:'Inter',sans-serif;
+  --font-head:'Poppins',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);padding:28px}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 16px 40px rgba(10,17,51,.08)}
+.hero{background:linear-gradient(135deg,var(--navy),#123A5C);color:#fff;padding:34px 38px 30px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-90px;top:-90px;width:260px;height:260px;border-radius:50%;background:rgba(80,195,192,.16)}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#B7E7E5;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:6px 10px;margin-bottom:14px}
+.hero h1{font-family:var(--font-head);font-weight:700;font-size:30px;letter-spacing:-.02em;margin-bottom:10px;max-width:760px;position:relative;z-index:1}
+.hero p{font-size:14.5px;line-height:1.75;color:#D7DEEC;max-width:760px;position:relative;z-index:1}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px;position:relative;z-index:1}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;border-radius:9px;padding:10px 14px;font-size:13px;font-weight:700;border:1px solid rgba(255,255,255,.22)}
+.btn.primary{background:#fff;color:var(--navy)}
+.btn.secondary{color:#fff;background:rgba(255,255,255,.08)}
+.content{padding:28px 34px 34px}
+.notice{display:grid;grid-template-columns:1.2fr .8fr;gap:16px;margin-bottom:24px}
+.panel{border:1px solid var(--line);border-radius:14px;background:#fff;padding:18px}
+.panel.soft{background:var(--bg-soft)}
+.panel h2{font-family:var(--font-head);font-size:17px;margin-bottom:9px}
+.panel p{font-size:13.5px;color:var(--text-2);line-height:1.7}
+.panel ul{margin:10px 0 0 18px;color:var(--text-2);font-size:13.5px;line-height:1.8}
+.guide-note{background:var(--amber);border:1px solid var(--amber-line);border-radius:12px;padding:14px 16px;font-size:13.5px;line-height:1.65;color:#5C3D06;margin-bottom:24px}
+.section-title{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin:26px 0 14px}
+.section-title h2{font-family:var(--font-head);font-size:20px;color:var(--text)}
+.section-title p{font-size:12.5px;color:var(--text-3);line-height:1.5;max-width:470px;text-align:right}
+.path{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:26px}
+.step{position:relative;border:1px solid var(--line);border-radius:14px;background:#fff;padding:16px 14px 15px;min-height:150px;text-decoration:none;transition:.15s ease}
+.step:hover,.card:hover{transform:translateY(-2px);border-color:var(--teal-line);box-shadow:0 10px 24px rgba(10,17,51,.08)}
+.num{width:26px;height:26px;border-radius:50%;background:var(--teal-dark);color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+.step h3{font-family:var(--font-head);font-size:14px;margin-bottom:7px}
+.step p{font-size:12.5px;line-height:1.55;color:var(--text-2)}
+.click{display:inline-flex;margin-top:12px;font-size:11px;font-weight:800;color:var(--teal-dark);background:var(--teal-tint);border:1px solid var(--teal-line);border-radius:999px;padding:4px 8px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px}
+.card{border:1px solid var(--line);border-radius:14px;padding:18px;text-decoration:none;color:var(--text);background:#fff;min-height:172px;transition:.15s ease}
+.tag{display:inline-block;font-size:10px;font-weight:800;color:var(--teal-dark);background:var(--teal-tint);border:1px solid var(--teal-line);border-radius:999px;padding:4px 8px;margin-bottom:12px;text-transform:uppercase;letter-spacing:.05em}
+.card h3{font-family:var(--font-head);font-size:15.5px;margin-bottom:7px}
+.card p{font-size:12.8px;color:var(--text-2);line-height:1.6;margin-bottom:10px}
+.card .opens{border-top:1px solid var(--line);padding-top:10px;margin-top:10px;font-size:12px;color:var(--text-3);line-height:1.55}
+.card .opens b{color:var(--text)}
+.idea{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:14px}
+.idea div{background:var(--blue-soft);border:1px solid #C9DDF1;border-radius:12px;padding:14px;font-size:12.5px;line-height:1.55;color:#123A5C}
+.idea b{display:block;font-family:var(--font-head);font-size:13px;color:var(--navy);margin-bottom:5px}
+.footer{border-top:1px solid var(--line);padding:18px 34px;background:var(--bg-soft);display:flex;justify-content:space-between;gap:16px;align-items:center;color:var(--text-3);font-size:12.5px;line-height:1.6}
+.footer a{color:var(--blue);text-decoration:none;font-weight:700}
+@media(max-width:960px){.notice{grid-template-columns:1fr}.path{grid-template-columns:1fr 1fr}.grid{grid-template-columns:1fr 1fr}.idea{grid-template-columns:1fr 1fr}.section-title{align-items:flex-start;flex-direction:column}.section-title p{text-align:left}}
+@media(max-width:650px){body{padding:14px}.hero{padding:26px 22px}.content{padding:22px}.path,.grid,.idea{grid-template-columns:1fr}.footer{padding:16px 22px;flex-direction:column;align-items:flex-start}.hero h1{font-size:25px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div class="kicker">Interactive review guide</div>
+    <h1>Sybiz Vision Help Redesign Prototype</h1>
+    <p>This start page explains how to review the prototype. The screens are interactive: click the cards, task groups and tabs to see how the proposed help experience would work.</p>
+    <div class="hero-actions">
+      <a class="btn primary" href="sybiz_help_home.html">Start from Help Home →</a>
+      <a class="btn secondary" href="sybiz_topic_preview.html">Open topic example</a>
+    </div>
+  </header>
+
+  <main class="content">
+    <div class="notice">
+      <section class="panel soft">
+        <h2>What this prototype is showing</h2>
+        <p>The prototype demonstrates a proposed navigation model for Sybiz Vision Help: users can start by purpose, workflow, role or reference need, while still reaching existing F1-mapped help topics.</p>
+        <ul>
+          <li>Five main entry points on the Help Home page</li>
+          <li>Task-based TOC groups that follow the order of work</li>
+          <li>Role-Based Job Aids as a shortcut layer over the same topics</li>
+          <li>Redesigned topic layout with clearer how-to steps and reference information</li>
+        </ul>
+      </section>
+      <section class="panel">
+        <h2>Important review tip</h2>
+        <p>Some prototype elements behave like buttons even when they look like cards. Click the cards to move through the prototype, and click the task-based TOC cards to change the selected detail panel on the same page.</p>
+      </section>
+    </div>
+
+    <div class="guide-note">
+      <b>Recommended review path:</b> follow the five steps below first. This gives the clearest view of the planning idea: Home entry points → Workflow guide → Task-based TOC → Existing F1 topic redesign.
+    </div>
+
+    <div class="section-title">
+      <h2>Recommended review path</h2>
+      <p>Use these cards in order if you are reviewing the concept for the first time.</p>
+    </div>
+
+    <div class="path">
+      <a class="step" href="sybiz_help_home.html">
+        <div class="num">1</div>
+        <h3>Help Home</h3>
+        <p>Review the five proposed entry points users would see first.</p>
+        <span class="click">Click to open</span>
+      </a>
+      <a class="step" href="sybiz_user_guide_landing.html">
+        <div class="num">2</div>
+        <h3>Workflow-Based User Guide</h3>
+        <p>Open the workflow guide and see how business areas are presented as cards.</p>
+        <span class="click">Click to open</span>
+      </a>
+      <a class="step" href="sybiz_landing_sales_order.html">
+        <div class="num">3</div>
+        <h3>Sales workflow example</h3>
+        <p>Click task-based TOC cards to preview how each group is organised.</p>
+        <span class="click">Click to open</span>
+      </a>
+      <a class="step" href="sybiz_topic_preview.html">
+        <div class="num">4</div>
+        <h3>Topic example</h3>
+        <p>Use the How to and Menu &amp; field reference tabs to compare the redesigned topic structure.</p>
+        <span class="click">Click to open</span>
+      </a>
+      <a class="step" href="sybiz_job_based_aids.html">
+        <div class="num">5</div>
+        <h3>Role shortcut layer</h3>
+        <p>Review how role-based job aids can sit on top of the same workflow topics.</p>
+        <span class="click">Click to open</span>
+      </a>
+    </div>
+
+    <div class="section-title">
+      <h2>What happens when you click each main card</h2>
+      <p>This section mirrors the first Help Home screen so reviewers know what each entry point is meant to demonstrate.</p>
+    </div>
+
+    <div class="grid">
+      <a class="card" href="sybiz_landing_getting_started.html">
+        <span class="tag">Home card</span>
+        <h3>Getting Started with Vision</h3>
+        <p>For new or returning users who need orientation before completing transactions.</p>
+        <div class="opens"><b>Opens:</b> a landing page with first-access, navigation, records, transaction basics and Help/F1 TOC groups.</div>
+      </a>
+      <a class="card" href="sybiz_landing_setup_admin.html">
+        <span class="tag">Home card</span>
+        <h3>Setup and Administration</h3>
+        <p>For administrators preparing Vision before users start daily workflows.</p>
+        <div class="opens"><b>Opens:</b> a setup/admin landing page organised around environment, company setup, users, rights and defaults.</div>
+      </a>
+      <a class="card" href="sybiz_user_guide_landing.html">
+        <span class="tag">Home card</span>
+        <h3>Workflow-Based User Guide</h3>
+        <p>For users who think in terms of jobs to be done rather than ribbon locations.</p>
+        <div class="opens"><b>Opens:</b> business-area cards. Select Sales and Order Management to see the detailed task-based TOC example.</div>
+      </a>
+      <a class="card" href="sybiz_landing_customisation.html">
+        <span class="tag">Home card</span>
+        <h3>Customisation and Extensions</h3>
+        <p>For users adapting Vision to business-specific fields, reports, layouts and extensions.</p>
+        <div class="opens"><b>Opens:</b> a customisation landing page grouped by business change, fields/data, reports/forms and import/export needs.</div>
+      </a>
+      <a class="card" href="sybiz_glossary_landing.html">
+        <span class="tag">Home card</span>
+        <h3>Glossary</h3>
+        <p>For users who need to understand Vision and accounting terms without reading a full workflow topic.</p>
+        <div class="opens"><b>Opens:</b> concept groups that can support a RoboHelp-generated glossary.</div>
+      </a>
+      <a class="card" href="vision_journey_boards.html">
+        <span class="tag">Full flow</span>
+        <h3>Full task-based TOC flow</h3>
+        <p>For reviewing the wider workflow planning logic across all major business areas.</p>
+        <div class="opens"><b>Opens:</b> a full task-flow board showing how workflow sections can be ordered.</div>
+      </a>
+    </div>
+
+    <div class="section-title">
+      <h2>Design idea to notice</h2>
+      <p>These are the key planning points the prototype is intended to communicate.</p>
+    </div>
+
+    <div class="idea">
+      <div><b>Purpose-based entry</b>Users do not all start with the same question. The Home page separates getting started, setup, workflows, customisation and glossary needs.</div>
+      <div><b>Task-based TOC</b>Workflow sections are ordered by the order of work, not alphabetically and not only by ribbon structure.</div>
+      <div><b>F1 compatibility</b>The workflow path does not replace existing F1 help. It gives users another way to reach the relevant topic.</div>
+      <div><b>Readable topic pages</b>Topic content is split into practical steps and reference details so users can act first and look up fields when needed.</div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <span>This is a presentation prototype for review and discussion, not final RoboHelp output.</span>
+    <a href="sybiz_help_home.html">Start review →</a>
+  </footer>
+</div>
+</body>
+</html>
