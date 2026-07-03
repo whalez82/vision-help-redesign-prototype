@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><title>Setup and Administration — Sybiz Vision Help</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Poppins:wght@500;600&amp;display=swap" rel="stylesheet"/><style>
+:root{
+  --navy:#0A1133; --blue-600:#2E71A1;
+  --teal-tint:#E9F8F7; --teal-line:#B7E7E5; --teal-dark:#0E5A58;
+  --text:#1F2430; --text-2:#4B5563; --text-3:#8A94A6;
+  --line:#E3E7EE;
+  --font-body:'Inter',sans-serif; --font-head:'Poppins',sans-serif;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{font-family:var(--font-body); color:var(--text); background:#EDF0F4;}
+.frame{max-width:1180px; margin:24px auto; background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden;}
+.navbar{background:var(--navy); display:flex; align-items:center; justify-content:space-between; padding:12px 24px;}
+.navbar .brand{color:#fff; font-family:var(--font-head); font-weight:600; font-size:15px;}
+.navbar .links{color:#B9C2D6; font-size:12.5px;}
+.navbar .links span{margin-left:20px;}
+.navbar a{text-decoration:none; color:inherit;}
+.hero{background:var(--teal-tint); padding:30px 36px 26px;}
+.hero .crumbs{font-size:12px; color:var(--teal-dark); opacity:.75; margin-bottom:12px;}
+.hero h1{font-family:var(--font-head); font-weight:600; font-size:24px; color:var(--teal-dark); margin-bottom:8px;}
+.hero p{font-size:14px; color:var(--teal-dark); opacity:.85; max-width:760px; line-height:1.65; margin-bottom:18px;}
+.hero .search{background:#fff; border-radius:8px; padding:10px 14px; max-width:440px; font-size:13px; color:var(--text-3); display:flex; align-items:center; gap:8px;}
+.jnote{margin:18px 36px 0;background:#FCFDFE;border:1px dashed var(--teal-line);border-radius:9px;padding:10px 14px;font-size:12px;color:var(--text-2);line-height:1.55;}.jnote a{color:var(--teal-dark);font-weight:600;text-decoration:none;}.jnote .tag{font-size:9.5px;font-weight:700;color:var(--teal-dark);text-transform:uppercase;letter-spacing:.05em;margin-right:8px;background:var(--teal-tint);border-radius:4px;padding:2px 6px;}
+.flow-strip{display:flex;flex-wrap:wrap;gap:8px;margin:16px 36px 0;align-items:center}.flow-strip span{font-size:12px;color:var(--teal-dark);background:#fff;border:1px solid var(--teal-line);border-radius:999px;padding:6px 10px}.flow-strip b{font-size:13px;color:var(--text-3)}
+.grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(250px,1fr)); gap:14px; padding:26px 36px 10px;}
+.card{border:1px solid var(--line); border-radius:12px; padding:18px; transition:border-color .15s; cursor:pointer; background:#fff;}
+.card:hover,.card.active{border-color:var(--teal-line); background:#FBFEFD;}
+.card.active{box-shadow:0 8px 20px rgba(10,17,51,.06);}
+.card .icon{width:36px; height:36px; border-radius:9px; background:var(--teal-tint); display:flex; align-items:center; justify-content:center; margin-bottom:12px; font-size:17px;}
+.card h2{font-family:var(--font-head); font-weight:600; font-size:14.5px; margin-bottom:5px; color:var(--text);}
+.card p{font-size:12.5px; line-height:1.55; color:var(--text-2);}
+.card .count{font-size:11.5px; color:var(--text-3); margin-top:10px;}
+.detail{margin:16px 36px 32px;border:1px solid var(--line);border-radius:13px;overflow:hidden;background:#fff;}
+.detail-head{background:var(--teal-tint);border-bottom:1px solid var(--teal-line);padding:14px 18px;}
+.detail-head .eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--teal-dark);font-weight:700;margin-bottom:4px;}
+.detail-head h2{font-family:var(--font-head);font-weight:600;font-size:17px;color:var(--teal-dark);margin:0;}
+.detail-body{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;padding:18px;}
+.gcard{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;}
+.ghead{background:var(--teal-tint);color:var(--teal-dark);font-family:var(--font-head);font-weight:600;font-size:14px;text-align:center;padding:11px 14px;border-bottom:1px solid var(--teal-line);}
+table{width:100%;border-collapse:collapse;font-size:13.5px;}td{padding:10px 16px;border-bottom:1px solid var(--line);vertical-align:middle;}tr:last-child td{border-bottom:none;}.tcell{width:60%;border-right:1px solid var(--line);}.pcell{color:var(--text-2);font-size:13px;text-align:center;background:#FCFDFE;}
+.side-card{border:1px solid var(--line);border-radius:10px;padding:14px;background:#FCFDFE;margin-bottom:12px;}.side-card h3{font-family:var(--font-head);font-weight:600;font-size:13.5px;color:var(--text);margin-bottom:6px}.side-card p{font-size:12.5px;color:var(--text-2);line-height:1.55}.side-card ul{margin-left:18px;color:var(--text-2);font-size:12.5px;line-height:1.65}.hidden{display:none}.utility{padding:6px 36px 30px;}.utility .cap{font-size:11px; font-weight:600; color:var(--text-3); text-transform:uppercase; letter-spacing:.04em; border-top:1px solid var(--line); padding:18px 0 12px;}.utility .row{display:grid; grid-template-columns:repeat(auto-fill, minmax(250px,1fr)); gap:14px;}.util-card{border:1px solid var(--line); border-radius:12px; padding:14px 16px; display:flex; align-items:center; gap:12px; cursor:pointer; text-decoration:none;color:inherit}.util-card:hover{background:#FAFBFC;}.util-card .icon{width:32px; height:32px; border-radius:8px; background:#F1F4F8; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:15px;}.util-card h3{font-weight:600; font-size:13px; margin-bottom:2px;}.util-card p{font-size:11.5px; color:var(--text-2); line-height:1.5;}.prototype-map{position:fixed;right:18px;bottom:18px;z-index:99;background:#0A1133;color:#fff;font-family:Inter,sans-serif;font-size:12px;font-weight:600;padding:9px 14px;border-radius:20px;text-decoration:none;box-shadow:0 2px 10px rgba(10,17,51,.25);}
+@media(max-width:860px){.detail-body{grid-template-columns:1fr}.navbar{align-items:flex-start;gap:8px;flex-direction:column}.navbar .links span{margin-left:0;margin-right:16px}}@media(max-width:620px){.frame{margin:0;border-radius:0}.grid{grid-template-columns:1fr;padding-left:22px;padding-right:22px}.hero{padding-left:22px;padding-right:22px}.jnote,.flow-strip,.detail,.utility{margin-left:22px;margin-right:22px;padding-left:0;padding-right:0}.detail{margin-bottom:24px}.prototype-map{display:none}}
+</style></head><body>
+<div class="frame">
+<header class="navbar"><a href="sybiz_help_home.html"><span class="brand">Sybiz Vision Help</span></a><span class="links"><span>Home</span><span>Contact support</span></span></header>
+<section class="hero"><div class="crumbs"><a href="sybiz_help_home.html">Home</a>  ›  Setup and Administration</div><h1>Setup and Administration</h1><p>Use this area for the people who prepare, control and maintain the Vision environment: implementers, administrators, business partners and power users.</p><div class="search">🔍  Search setup topics, for example "security rights"</div></section>
+<div class="jnote"><span class="tag">Design note</span>Each area below follows the order setup usually happens. <a href="#" onclick="showToc('setup-env');return false;">See the setup task-based TOC flow below ↓</a><span> The selected panels use the workbook TOC names so the prototype matches the proposed TOC.</span></div>
+<div class="flow-strip"><span>Environment</span><b>→</b><span>Company</span><b>→</b><span>Users / rights</span><b>→</b><span>Defaults / lookups</span><b>→</b><span>Module setup</span><b>→</b><span>Maintenance</span></div>
+<div class="grid"><div class="card active" data-card="setup-env" onclick="showToc('setup-env')">
+<div class="icon">🖥️</div>
+<h2>Environment, licensing and databases</h2>
+<p>Prepare the common database, licence and company database.</p>
+<div class="count">12 workbook TOC entries</div>
+</div><div class="card" data-card="setup-company" onclick="showToc('setup-company')">
+<div class="icon">🏢</div>
+<h2>Company configuration</h2>
+<p>Maintain company details and company-wide settings.</p>
+<div class="count">11 workbook TOC entries</div>
+</div><div class="card" data-card="setup-rights" onclick="showToc('setup-rights')">
+<div class="icon">🔑</div>
+<h2>Users, roles and security rights</h2>
+<p>Control who can access, add, edit, process and enquire.</p>
+<div class="count">11 workbook TOC entries</div>
+</div><div class="card" data-card="setup-defaults" onclick="showToc('setup-defaults')">
+<div class="icon">⚙️</div>
+<h2>Defaults, lookups and numbering</h2>
+<p>Set reusable values used across ledgers and transactions.</p>
+<div class="count">4 workbook TOC entries</div>
+</div><div class="card" data-card="setup-modules" onclick="showToc('setup-modules')">
+<div class="icon">🧩</div>
+<h2>Module preparation</h2>
+<p>Prepare ledgers and operational areas before transactions begin.</p>
+<div class="count">4 workbook TOC entries</div>
+</div><div class="card" data-card="setup-maint" onclick="showToc('setup-maint')">
+<div class="icon">🧹</div>
+<h2>Ongoing administration and maintenance</h2>
+<p>Maintain users, locked records, email templates and system health.</p>
+<div class="count">19 workbook TOC entries</div>
+</div></div>
+<div class="detail"><div class="toc-panel" id="setup-env">
+<div class="detail-head"><div class="eyebrow">Selected task-based TOC group</div><h2>Environment, licensing and databases</h2></div>
+<div class="detail-body">
+<div class="gcard"><div class="ghead">Workbook TOC names and topic order</div><table><tr class="span-start"><td class="tcell"><strong>Installation, registration and licensing</strong></td><td class="pcell"><div><div style="margin-bottom:4px;">Understand installation vs registration vs licensing</div><div style="margin-bottom:4px;">Register Vision online or by licence file</div><div style="margin-bottom:4px;">Understand licence expiry and turnover limitations</div></div></td></tr><tr class="span-start"><td class="tcell"><strong>Common database setup</strong></td><td class="pcell"><div><div style="margin-bottom:4px;">Understand the common database</div><div style="margin-bottom:4px;">Prepare information before creating the common</div><div style="margin-bottom:4px;">Create the common database</div></div></td></tr><tr class="span-start"><td class="tcell"><strong>Company database setup</strong></td><td class="pcell"><div><div style="margin-bottom:4px;">Understand the company database</div><div style="margin-bottom:4px;">Choose country and company setup options</div><div style="margin-bottom:4px;">Create the company database</div></div></td></tr><tr class="span-start"><td class="tcell"><strong>Upgrades and version maintenance</strong></td><td class="pcell"><div><div style="margin-bottom:4px;">Understand Vision upgrades</div><div style="margin-bottom:4px;">Download and install an upgrade</div><div style="margin-bottom:4px;">Delete a downloaded upgrade</div></div></td></tr></table></div>
+<div>
+<div class="side-card"><h3>Why this group exists</h3><p>This group captures the technical starting point before company data or users can work in Vision.</p></div>
+<div class="side-card"><h3>Typical users / moments</h3><ul><li>Implementer setting up a new installation</li><li>Administrator restoring or linking a database</li><li>Support user checking licence or common database setup</li></ul></div>
+<div class="side-card"><h3>TOC names from workbook</h3><ul><li>Installation, registration and licensing (3 sub-topics)</li><li>Common database setup (3 sub-topics)</li><li>Company database setup (3 sub-topics)</li><li>Upgrades and version maintenance (3 sub-topics)</li></ul></div>
+<div class="side-card"><h3>Prototype note</h3><p>Card group labels are presentation groupings. The table uses the exact TOC names from the uploaded workbook so the prototype stays aligned with the proposed TOC.</p></div></div>
+</div>
+</div><div class="toc-panel hidden" id="setup-company">
+<div class="detail-head"><div class="eyebrow">Selected task-based TOC group</div><h2>Company configuration</h2></div>
+<div class="detail-body">
+<div class="gcard"><div class="ghead">Workbook TOC names and topic order</div><table><tr class="span-start"><td class="tcell"><strong>Set up overview</strong></td><td class="pcell"><div><div style="margin-bottom:4px;">Choose a setup approach: fully or partially prepared accounts</div><div style="margin-bottom:4px;">Know the best time to start using Vision</div></div></td></tr><tr class="span-start"><td class="tcell"><strong>Company details and system options</strong></td><td class="pcell"><div><div style="margin-bottom:4px;">Edit company details, addresses and bank details</div><div style="margin-bottom:4px;">Maintain base currency details</div><div style="margin-bottom:4px;">Configure common system settings</div><div style="margin-bottom:4px;">Configure email and SMS settings</div><div style="margin-bottom:4px;">Configure password constraints</div></div></td></tr><tr class="span-start"><td class="tcell"><strong>Company consolidation</strong></td><td class="pcell"><div><div style="margin-bottom:4px;">Set up a consolidation company</div><div style="margin-bottom:4px;">Assign consolidation accounts</div><div style="margin-bottom:4px;">Restructure consolidation accounts</div><div style="margin-bottom:4px;">Review consolidation analytics, dashboards and reports</div></div></td></tr></table></div>
+<div>
+<div class="side-card"><h3>Why this group exists</h3><p>Company-level options influence later ledger and transaction behaviour, so they sit before users and workflow setup.</p></div>
+<div class="side-card"><h3>Typical users / moments</h3><ul><li>Admin preparing a new company</li><li>Business partner configuring company details</li><li>Finance manager checking company-wide settings</li></ul></div>
+<div class="side-card"><h3>TOC names from workbook</h3><ul><li>Set up overview (2 sub-topics)</li><li>Company details and system options (5 sub-topics)</li><li>Company consolidation (4 sub-topics)</li></ul></div>
+<div class="side-card"><h3>Prototype note</h3><p>Card group labels are presentation groupings. The table uses the exact TOC names from the uploaded workbook so the prototype stays aligned with the proposed TOC.</p></div></div>
+</div>
+</div><div class="toc-panel hidden" id="setup-rights">
+<div class="detail-head"><div class="eyebrow">Selected task-based TOC group</div><h2>Users, roles and security rights</h2></div>
+<div class="detail-body">
+<div class="gcard"><div class="ghead">Workbook TOC names and topic order</div><table><tr class="span-start"><td class="tcell"><strong>Users, roles and security rights</strong></td><td class="pcell"><div><div style="margin-bottom:4px;">Understand users, roles and rights</div><div style="margin-bottom:4px;">Create and edit roles and users</div><div style="margin-bottom:4px;">Understand maintenance, transaction, enquiry and report right categories</div><div style="margin-bottom:4px;">Assign rights by Vision area</div><div style="margin-bottom:4px;">Understand why unavailable items are greyed out</div></div></td></tr><tr class="span-start"><td class="tcell"><strong>Setup and access troubleshooting</strong></td><td class="pcell"><div><div style="margin-bottom:4px;">Licence is missing, invalid or expired</div><div style="margin-bottom:4px;">Common or company database will not connect</div><div style="margin-bottom:4px;">Database upgrade prompt won't clear</div><div style="margin-bottom:4px;">Login or Windows Authentication mapping fails</div><div style="margin-bottom:4px;">Menu, tab or field is greyed out</div><div style="margin-bottom:4px;">Record or user appears locked</div></div></td></tr></table></div>
+<div>
+<div class="side-card"><h3>Why this group exists</h3><p>Security is a different user intent from daily transactions. Admins need to control access before users can complete work safely.</p></div>
+<div class="side-card"><h3>Typical users / moments</h3><ul><li>Administrator creating users</li><li>Manager assigning task access by role</li><li>Support user investigating greyed-out buttons</li></ul></div>
+<div class="side-card"><h3>TOC names from workbook</h3><ul><li>Users, roles and security rights (5 sub-topics)</li><li>Setup and access troubleshooting (6 sub-topics)</li></ul></div>
+<div class="side-card"><h3>Prototype note</h3><p>Card group labels are presentation groupings. The table uses the exact TOC names from the uploaded workbook so the prototype stays aligned with the proposed TOC.</p></div></div>
+</div>
+</div><div class="toc-panel hidden" id="setup-defaults">
+<div class="detail-head"><div class="eyebrow">Selected task-based TOC group</div><h2>Defaults, lookups and numbering</h2></div>
+<div class="detail-body">
+<div class="gcard"><div class="ghead">Workbook TOC names and topic order</div><table><tr class="span-start"><td class="tcell"><strong>Lookups and shared reference data</strong></td><td class="pcell"><div><div style="margin-bottom:4px;">Understand and maintain lookup lists</div></div></td></tr><tr class="span-start"><td class="tcell"><strong>Defaults, numbering and posting settings</strong></td><td class="pcell"><div><div style="margin-bottom:4px;">Understand how defaults and numbering work across Vision</div></div></td></tr><tr class="span-start"><td class="tcell"><strong>Financial periods, tax and currency settings</strong></td><td class="pcell"><div><div style="margin-bottom:4px;">Set up foreign currencies and exchange accounts</div><div style="margin-bottom:4px;">Set up tax years, tax periods and tax codes</div></div></td></tr></table></div>
+<div>
+<div class="side-card"><h3>Why this group exists</h3><p>Lookups and defaults are setup scaffolding. They support workflow topics but are not daily task instructions for most users.</p></div>
+<div class="side-card"><h3>Typical users / moments</h3><ul><li>Admin preparing transaction defaults</li><li>Power user maintaining dropdown values</li><li>Consultant configuring module behaviour</li></ul></div>
+<div class="side-card"><h3>TOC names from workbook</h3><ul><li>Lookups and shared reference data (1 sub-topics)</li><li>Defaults, numbering and posting settings (1 sub-topics)</li><li>Financial periods, tax and currency settings (2 sub-topics)</li></ul></div>
+<div class="side-card"><h3>Prototype note</h3><p>Card group labels are presentation groupings. The table uses the exact TOC names from the uploaded workbook so the prototype stays aligned with the proposed TOC.</p></div></div>
+</div>
+</div><div class="toc-panel hidden" id="setup-modules">
+<div class="detail-head"><div class="eyebrow">Selected task-based TOC group</div><h2>Module preparation</h2></div>
+<div class="detail-body">
+<div class="gcard"><div class="ghead">Workbook TOC names and topic order</div><table><tr class="span-start"><td class="tcell"><strong>Set up overview</strong></td><td class="pcell"><div><div style="margin-bottom:4px;">Choose a setup approach: fully or partially prepared accounts</div><div style="margin-bottom:4px;">Know the best time to start using Vision</div></div></td></tr><tr class="span-start"><td class="tcell"><strong>Defaults, numbering and posting settings</strong></td><td class="pcell"><div><div style="margin-bottom:4px;">Understand how defaults and numbering work across Vision</div></div></td></tr><tr class="span-start"><td class="tcell"><strong>Lookups and shared reference data</strong></td><td class="pcell"><div><div style="margin-bottom:4px;">Understand and maintain lookup lists</div></div></td></tr></table></div>
+<div>
+<div class="side-card"><h3>Why this group exists</h3><p>Each module has a setup phase. This group shows setup as a sequence before daily workflow areas like sales, purchasing or inventory.</p></div>
+<div class="side-card"><h3>Typical users / moments</h3><ul><li>Implementation user configuring modules</li><li>Manager preparing a new operational area</li><li>Power user checking prerequisites for workflows</li></ul></div>
+<div class="side-card"><h3>TOC names from workbook</h3><ul><li>Set up overview (2 sub-topics)</li><li>Defaults, numbering and posting settings (1 sub-topics)</li><li>Lookups and shared reference data (1 sub-topics)</li></ul></div>
+<div class="side-card"><h3>Prototype note</h3><p>Card group labels are presentation groupings. The table uses the exact TOC names from the uploaded workbook so the prototype stays aligned with the proposed TOC.</p></div></div>
+</div>
+</div><div class="toc-panel hidden" id="setup-maint">
+<div class="detail-head"><div class="eyebrow">Selected task-based TOC group</div><h2>Ongoing administration and maintenance</h2></div>
+<div class="detail-body">
+<div class="gcard"><div class="ghead">Workbook TOC names and topic order</div><table><tr class="span-start"><td class="tcell"><strong>Administration tools, audit logs and breakpoints</strong></td><td class="pcell"><div><div style="margin-bottom:4px;">Manage default and clear user state</div><div style="margin-bottom:4px;">Clear the change log</div><div style="margin-bottom:4px;">Unlock locked records</div><div style="margin-bottom:4px;">View logged-in users and the Application Log</div><div style="margin-bottom:4px;">Maintain email templates</div><div style="margin-bottom:4px;">Set breakpoints for support and diagnostics</div><div style="color:var(--text-3);font-size:12px;">+ 1 more</div></div></td></tr><tr class="span-start"><td class="tcell"><strong>Data import, export and conversion</strong></td><td class="pcell"><div><div style="margin-bottom:4px;">Import or export data</div><div style="margin-bottom:4px;">Convert from Sybiz Vision Classic or .NET</div><div style="margin-bottom:4px;">Use generic conversion</div></div></td></tr><tr class="span-start"><td class="tcell"><strong>Upgrades and version maintenance</strong></td><td class="pcell"><div><div style="margin-bottom:4px;">Understand Vision upgrades</div><div style="margin-bottom:4px;">Download and install an upgrade</div><div style="margin-bottom:4px;">Delete a downloaded upgrade</div></div></td></tr><tr class="span-start"><td class="tcell"><strong>Setup and access troubleshooting</strong></td><td class="pcell"><div><div style="margin-bottom:4px;">Licence is missing, invalid or expired</div><div style="margin-bottom:4px;">Common or company database will not connect</div><div style="margin-bottom:4px;">Database upgrade prompt won't clear</div><div style="margin-bottom:4px;">Login or Windows Authentication mapping fails</div><div style="margin-bottom:4px;">Menu, tab or field is greyed out</div><div style="margin-bottom:4px;">Record or user appears locked</div></div></td></tr></table></div>
+<div>
+<div class="side-card"><h3>Why this group exists</h3><p>Administration continues after implementation. This group gives admins one place for support and maintenance tasks.</p></div>
+<div class="side-card"><h3>Typical users / moments</h3><ul><li>Admin resolving locked records</li><li>Support user reviewing logged-in users</li><li>Power user maintaining templates or settings</li></ul></div>
+<div class="side-card"><h3>TOC names from workbook</h3><ul><li>Administration tools, audit logs and breakpoints (7 sub-topics)</li><li>Data import, export and conversion (3 sub-topics)</li><li>Upgrades and version maintenance (3 sub-topics)</li><li>Setup and access troubleshooting (6 sub-topics)</li></ul></div>
+<div class="side-card"><h3>Prototype note</h3><p>Card group labels are presentation groupings. The table uses the exact TOC names from the uploaded workbook so the prototype stays aligned with the proposed TOC.</p></div></div>
+</div>
+</div></div>
+<div class="utility"><div class="cap">Related presentation pages</div><div class="row"><a class="util-card" href="sybiz_landing_getting_started.html"><div class="icon">🧭</div><div><h3>Getting Started</h3><p>Basic orientation before setup or administration tasks.</p></div></a><a class="util-card" href="sybiz_landing_customisation.html"><div class="icon">🎨</div><div><h3>Customisation and Extensions</h3><p>For changing forms, reports, fields or business-specific behaviour.</p></div></a></div></div>
+</div>
+<a class="prototype-map" href="index.html">☰ Prototype map</a>
+<script>
+function showToc(id){
+  document.querySelectorAll('.toc-panel').forEach(p=>p.classList.add('hidden'));
+  document.getElementById(id).classList.remove('hidden');
+  document.querySelectorAll('.card[data-card]').forEach(c=>c.classList.remove('active'));
+  document.querySelector('.card[data-card="'+id+'"]').classList.add('active');
+}
+</script>
+</body></html>

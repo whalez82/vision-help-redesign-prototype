@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Glossary — Sybiz Vision Help</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600&display=swap" rel="stylesheet"><style>
+:root{
+  --navy:#0A1133; --blue-600:#2E71A1;
+  --teal-tint:#E9F8F7; --teal-line:#B7E7E5; --teal-dark:#0E5A58;
+  --text:#1F2430; --text-2:#4B5563; --text-3:#8A94A6;
+  --line:#E3E7EE;
+  --font-body:'Inter',sans-serif; --font-head:'Poppins',sans-serif;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{font-family:var(--font-body); color:var(--text); background:#EDF0F4;}
+.frame{max-width:1180px; margin:24px auto; background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden;}
+.navbar{background:var(--navy); display:flex; align-items:center; justify-content:space-between; padding:12px 24px;}
+.navbar .brand{color:#fff; font-family:var(--font-head); font-weight:600; font-size:15px;}
+.navbar .links{color:#B9C2D6; font-size:12.5px;}
+.navbar .links span{margin-left:20px;}
+.navbar a{text-decoration:none; color:inherit;}
+.hero{background:var(--teal-tint); padding:30px 36px 26px;}
+.hero .crumbs{font-size:12px; color:var(--teal-dark); opacity:.75; margin-bottom:12px;}
+.hero h1{font-family:var(--font-head); font-weight:600; font-size:24px; color:var(--teal-dark); margin-bottom:8px;}
+.hero p{font-size:14px; color:var(--teal-dark); opacity:.85; max-width:760px; line-height:1.65; margin-bottom:18px;}
+.hero .search{background:#fff; border-radius:8px; padding:10px 14px; max-width:440px; font-size:13px; color:var(--text-3); display:flex; align-items:center; gap:8px;}
+.jnote{margin:18px 36px 0;background:#FCFDFE;border:1px dashed var(--teal-line);border-radius:9px;padding:10px 14px;font-size:12px;color:var(--text-2);line-height:1.55;}.jnote a{color:var(--teal-dark);font-weight:600;text-decoration:none;}.jnote .tag{font-size:9.5px;font-weight:700;color:var(--teal-dark);text-transform:uppercase;letter-spacing:.05em;margin-right:8px;background:var(--teal-tint);border-radius:4px;padding:2px 6px;}
+.flow-strip{display:flex;flex-wrap:wrap;gap:8px;margin:16px 36px 0;align-items:center}.flow-strip span{font-size:12px;color:var(--teal-dark);background:#fff;border:1px solid var(--teal-line);border-radius:999px;padding:6px 10px}.flow-strip b{font-size:13px;color:var(--text-3)}
+.grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(250px,1fr)); gap:14px; padding:26px 36px 10px;}
+.card{border:1px solid var(--line); border-radius:12px; padding:18px; transition:border-color .15s; cursor:pointer; background:#fff;}
+.card:hover,.card.active{border-color:var(--teal-line); background:#FBFEFD;}
+.card.active{box-shadow:0 8px 20px rgba(10,17,51,.06);}
+.card .icon{width:36px; height:36px; border-radius:9px; background:var(--teal-tint); display:flex; align-items:center; justify-content:center; margin-bottom:12px; font-size:17px;}
+.card h2{font-family:var(--font-head); font-weight:600; font-size:14.5px; margin-bottom:5px; color:var(--text);}
+.card p{font-size:12.5px; line-height:1.55; color:var(--text-2);}
+.card .count{font-size:11.5px; color:var(--text-3); margin-top:10px;}
+.detail{margin:16px 36px 32px;border:1px solid var(--line);border-radius:13px;overflow:hidden;background:#fff;}
+.detail-head{background:var(--teal-tint);border-bottom:1px solid var(--teal-line);padding:14px 18px;}
+.detail-head .eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--teal-dark);font-weight:700;margin-bottom:4px;}
+.detail-head h2{font-family:var(--font-head);font-weight:600;font-size:17px;color:var(--teal-dark);margin:0;}
+.detail-body{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;padding:18px;}
+.gcard{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;}
+.ghead{background:var(--teal-tint);color:var(--teal-dark);font-family:var(--font-head);font-weight:600;font-size:14px;text-align:center;padding:11px 14px;border-bottom:1px solid var(--teal-line);}
+table{width:100%;border-collapse:collapse;font-size:13.5px;}td{padding:10px 16px;border-bottom:1px solid var(--line);vertical-align:middle;}tr:last-child td{border-bottom:none;}.tcell{width:60%;border-right:1px solid var(--line);}.pcell{color:var(--text-2);font-size:13px;text-align:center;background:#FCFDFE;}
+.side-card{border:1px solid var(--line);border-radius:10px;padding:14px;background:#FCFDFE;margin-bottom:12px;}.side-card h3{font-family:var(--font-head);font-weight:600;font-size:13.5px;color:var(--text);margin-bottom:6px}.side-card p{font-size:12.5px;color:var(--text-2);line-height:1.55}.side-card ul{margin-left:18px;color:var(--text-2);font-size:12.5px;line-height:1.65}.hidden{display:none}.utility{padding:6px 36px 30px;}.utility .cap{font-size:11px; font-weight:600; color:var(--text-3); text-transform:uppercase; letter-spacing:.04em; border-top:1px solid var(--line); padding:18px 0 12px;}.utility .row{display:grid; grid-template-columns:repeat(auto-fill, minmax(250px,1fr)); gap:14px;}.util-card{border:1px solid var(--line); border-radius:12px; padding:14px 16px; display:flex; align-items:center; gap:12px; cursor:pointer; text-decoration:none;color:inherit}.util-card:hover{background:#FAFBFC;}.util-card .icon{width:32px; height:32px; border-radius:8px; background:#F1F4F8; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:15px;}.util-card h3{font-weight:600; font-size:13px; margin-bottom:2px;}.util-card p{font-size:11.5px; color:var(--text-2); line-height:1.5;}.prototype-map{position:fixed;right:18px;bottom:18px;z-index:99;background:#0A1133;color:#fff;font-family:Inter,sans-serif;font-size:12px;font-weight:600;padding:9px 14px;border-radius:20px;text-decoration:none;box-shadow:0 2px 10px rgba(10,17,51,.25);}
+@media(max-width:860px){.detail-body{grid-template-columns:1fr}.navbar{align-items:flex-start;gap:8px;flex-direction:column}.navbar .links span{margin-left:0;margin-right:16px}}@media(max-width:620px){.frame{margin:0;border-radius:0}.grid{grid-template-columns:1fr;padding-left:22px;padding-right:22px}.hero{padding-left:22px;padding-right:22px}.jnote,.flow-strip,.detail,.utility{margin-left:22px;margin-right:22px;padding-left:0;padding-right:0}.detail{margin-bottom:24px}.prototype-map{display:none}}
+</style></head><body>
+<div class="frame">
+  <header class="navbar"><a href="sybiz_help_home.html"><span class="brand">Sybiz Vision Help</span></a><span class="links"><span>Home</span><span>Contact support</span></span></header>
+  <section class="hero"><div class="crumbs"><a href="sybiz_help_home.html">Home</a> &nbsp;&rsaquo;&nbsp; Glossary</div><h1>Glossary</h1><p>Use this area when a user needs quick concept or terminology support before continuing a task. RoboHelp can still generate the alphabetic glossary; this page explains how glossary entries support the redesigned help structure.</p><div class="search">&#128269;&nbsp; Search terms, for example &quot;posting&quot;</div></section>
+  <div class="jnote"><span class="tag">Design note</span>Glossary is not a workflow, so the groups below are arranged by where users usually meet the term. <a href="#" onclick="showToc('gl-core');return false;">See the concept-based TOC flow below &#8595;</a></div>
+  <div class="flow-strip"><span>Core concepts</span><b>&rarr;</b><span>Sales terms</span><b>&rarr;</b><span>Purchasing terms</span><b>&rarr;</b><span>Stock terms</span><b>&rarr;</b><span>Jobs / Service</span><b>&rarr;</b><span>Admin / Reports</span></div>
+  <div class="grid"><div class="card active" data-card="gl-core" onclick="showToc('gl-core')">
+      <div class="icon">📘</div>
+      <h2>Core accounting and Vision concepts</h2>
+      <p>Terms users meet across the whole product.</p>
+      <div class="count">Common terms</div>
+    </div><div class="card" data-card="gl-sales" onclick="showToc('gl-sales')">
+      <div class="icon">🛒</div>
+      <h2>Customer and sales terms</h2>
+      <p>Terms connected to customers, quotes, orders, deliveries and invoices.</p>
+      <div class="count">Sales terms</div>
+    </div><div class="card" data-card="gl-purchase" onclick="showToc('gl-purchase')">
+      <div class="icon">🚚</div>
+      <h2>Supplier and purchasing terms</h2>
+      <p>Terms connected to suppliers, purchase documents and payments.</p>
+      <div class="count">Purchasing terms</div>
+    </div><div class="card" data-card="gl-stock" onclick="showToc('gl-stock')">
+      <div class="icon">📦</div>
+      <h2>Inventory, warehouse and manufacturing terms</h2>
+      <p>Terms about stock, products, tracking and assembly work.</p>
+      <div class="count">Stock terms</div>
+    </div><div class="card" data-card="gl-ops" onclick="showToc('gl-ops')">
+      <div class="icon">🛠️</div>
+      <h2>Jobs, service and scheduling terms</h2>
+      <p>Terms users meet in job costing, service requests and scheduler work.</p>
+      <div class="count">Operations terms</div>
+    </div><div class="card" data-card="gl-admin" onclick="showToc('gl-admin')">
+      <div class="icon">📊</div>
+      <h2>Administration, customisation and reporting terms</h2>
+      <p>Terms about setup, reports, custom fields and system support.</p>
+      <div class="count">Admin terms</div>
+    </div></div>
+  <div class="detail"><div class="toc-panel" id="gl-core">
+          <div class="detail-head"><div class="eyebrow">Selected task-based TOC group</div><h2>Core accounting and Vision concepts</h2></div>
+          <div class="detail-body">
+            <div class="gcard"><div class="ghead">Task flow and topic order</div><table><tr><td class='tcell'>Ledger, account, posting and batch</td><td class='pcell'>core accounting language</td></tr><tr><td class='tcell'>Transaction, record, enquiry and report</td><td class='pcell'>Vision object language</td></tr><tr><td class='tcell'>Save, process, post and close</td><td class='pcell'>action language</td></tr><tr><td class='tcell'>User, role, right and breakpoint</td><td class='pcell'>access language</td></tr></table></div>
+            <div>
+              <div class="side-card"><h3>Why this group exists</h3><p>These terms block understanding across many workflows, so they need a central concept-support entry point.</p></div>
+              <div class="side-card"><h3>Typical users / moments</h3><ul><li>New users learning ERP terms</li><li>Existing users unsure what a message or field means</li><li>Support staff explaining concepts</li></ul></div>
+              <div class="side-card"><h3>Topics included</h3><ul><li>Ledger</li><li>Posting</li><li>Batch</li><li>Transaction</li><li>Record</li><li>Enquiry</li><li>Report</li><li>Security right</li></ul></div>
+            </div>
+          </div>
+        </div><div class="toc-panel hidden" id="gl-sales">
+          <div class="detail-head"><div class="eyebrow">Selected task-based TOC group</div><h2>Customer and sales terms</h2></div>
+          <div class="detail-body">
+            <div class="gcard"><div class="ghead">Task flow and topic order</div><table><tr><td class='tcell'>Debtor, customer and customer group</td><td class='pcell'>who buys</td></tr><tr><td class='tcell'>Quote, order, delivery and invoice</td><td class='pcell'>sales documents</td></tr><tr><td class='tcell'>Credit, return, receipt and allocation</td><td class='pcell'>corrections and payment</td></tr><tr><td class='tcell'>Back order, pick and pack</td><td class='pcell'>fulfilment status</td></tr></table></div>
+            <div>
+              <div class="side-card"><h3>Why this group exists</h3><p>Users often arrive from sales screens and need a quick meaning without leaving the task context.</p></div>
+              <div class="side-card"><h3>Typical users / moments</h3><ul><li>Sales admin</li><li>Accounts receivable user</li><li>Customer service user</li></ul></div>
+              <div class="side-card"><h3>Topics included</h3><ul><li>Debtor</li><li>Customer group</li><li>Sales quote</li><li>Sales order</li><li>Sales delivery</li><li>Sales invoice</li><li>Credit</li><li>Receipt</li><li>Allocation</li></ul></div>
+            </div>
+          </div>
+        </div><div class="toc-panel hidden" id="gl-purchase">
+          <div class="detail-head"><div class="eyebrow">Selected task-based TOC group</div><h2>Supplier and purchasing terms</h2></div>
+          <div class="detail-body">
+            <div class="gcard"><div class="ghead">Task flow and topic order</div><table><tr><td class='tcell'>Creditor, supplier and supplier group</td><td class='pcell'>who is paid</td></tr><tr><td class='tcell'>Requisition, purchase order and delivery</td><td class='pcell'>purchase flow</td></tr><tr><td class='tcell'>Invoice, credit, return and offset</td><td class='pcell'>supplier balance</td></tr><tr><td class='tcell'>Suggested orders and approval groups</td><td class='pcell'>planning and control</td></tr></table></div>
+            <div>
+              <div class="side-card"><h3>Why this group exists</h3><p>Purchasing users need to understand document flow and matching concepts quickly.</p></div>
+              <div class="side-card"><h3>Typical users / moments</h3><ul><li>Purchasing officer</li><li>Accounts payable user</li><li>Warehouse receiving user</li></ul></div>
+              <div class="side-card"><h3>Topics included</h3><ul><li>Creditor</li><li>Supplier</li><li>Purchase requisition</li><li>Purchase order</li><li>Purchase delivery</li><li>Purchase invoice</li><li>Supplier credit</li><li>Offset</li></ul></div>
+            </div>
+          </div>
+        </div><div class="toc-panel hidden" id="gl-stock">
+          <div class="detail-head"><div class="eyebrow">Selected task-based TOC group</div><h2>Inventory, warehouse and manufacturing terms</h2></div>
+          <div class="detail-body">
+            <div class="gcard"><div class="ghead">Task flow and topic order</div><table><tr><td class='tcell'>Product, location and unit of measure</td><td class='pcell'>stock foundation</td></tr><tr><td class='tcell'>Stock on hand, free stock and allocation</td><td class='pcell'>availability</td></tr><tr><td class='tcell'>Serial, lot and stocktake</td><td class='pcell'>tracking and counting</td></tr><tr><td class='tcell'>Assembly, component and manufacture issue</td><td class='pcell'>manufacturing language</td></tr></table></div>
+            <div>
+              <div class="side-card"><h3>Why this group exists</h3><p>Inventory concepts appear in sales, purchasing and manufacturing, so grouping them helps cross-workflow understanding.</p></div>
+              <div class="side-card"><h3>Typical users / moments</h3><ul><li>Inventory controller</li><li>Warehouse / dispatch user</li><li>Manufacturing user</li></ul></div>
+              <div class="side-card"><h3>Topics included</h3><ul><li>Product</li><li>Location</li><li>Unit of Measure</li><li>Stock on hand</li><li>Free stock</li><li>Allocation</li><li>Serial number</li><li>Lot number</li><li>Assembly</li><li>Component</li></ul></div>
+            </div>
+          </div>
+        </div><div class="toc-panel hidden" id="gl-ops">
+          <div class="detail-head"><div class="eyebrow">Selected task-based TOC group</div><h2>Jobs, service and scheduling terms</h2></div>
+          <div class="detail-body">
+            <div class="gcard"><div class="ghead">Task flow and topic order</div><table><tr><td class='tcell'>Job, estimate, WIP and retention</td><td class='pcell'>job costing language</td></tr><tr><td class='tcell'>Service item, service request and action</td><td class='pcell'>service language</td></tr><tr><td class='tcell'>Meter, labour rate and timesheet</td><td class='pcell'>service/job charging</td></tr><tr><td class='tcell'>Scheduler, appointment and resource</td><td class='pcell'>planning language</td></tr></table></div>
+            <div>
+              <div class="side-card"><h3>Why this group exists</h3><p>These terms support operational workflows that do not fit cleanly into sales or purchasing only.</p></div>
+              <div class="side-card"><h3>Typical users / moments</h3><ul><li>Job manager</li><li>Service coordinator</li><li>Technician scheduler</li></ul></div>
+              <div class="side-card"><h3>Topics included</h3><ul><li>Job</li><li>Estimate</li><li>Work in progress</li><li>Retention</li><li>Service item</li><li>Service request</li><li>Service action</li><li>Meter</li><li>Labour rate</li><li>Scheduler</li></ul></div>
+            </div>
+          </div>
+        </div><div class="toc-panel hidden" id="gl-admin">
+          <div class="detail-head"><div class="eyebrow">Selected task-based TOC group</div><h2>Administration, customisation and reporting terms</h2></div>
+          <div class="detail-body">
+            <div class="gcard"><div class="ghead">Task flow and topic order</div><table><tr><td class='tcell'>Default, lookup, template and option</td><td class='pcell'>setup language</td></tr><tr><td class='tcell'>Custom field, category and sort code</td><td class='pcell'>configuration language</td></tr><tr><td class='tcell'>Report, dashboard, analytic and report set</td><td class='pcell'>reporting language</td></tr><tr><td class='tcell'>Import, export and mass update</td><td class='pcell'>data change language</td></tr></table></div>
+            <div>
+              <div class="side-card"><h3>Why this group exists</h3><p>Administrators and power users need a quick reference for configuration and reporting concepts.</p></div>
+              <div class="side-card"><h3>Typical users / moments</h3><ul><li>System administrator</li><li>Power user</li><li>Report maintainer</li></ul></div>
+              <div class="side-card"><h3>Topics included</h3><ul><li>Default</li><li>Lookup</li><li>Template</li><li>Custom field</li><li>Sort code</li><li>Dashboard</li><li>Analytic</li><li>Report set</li><li>Mass update</li></ul></div>
+            </div>
+          </div>
+        </div></div>
+  <div class="utility"><div class="cap">Related presentation pages</div><div class="row"><a class="util-card" href="sybiz_user_guide_landing.html"><div class="icon">🛠️</div><div><h3>Workflow-Based User Guide</h3><p>Return to task-based help after checking a term.</p></div></a><a class="util-card" href="sybiz_landing_getting_started.html"><div class="icon">🧭</div><div><h3>Getting Started</h3><p>For users who need basic orientation before glossary terms.</p></div></a></div></div>
+</div>
+<a class="prototype-map" href="index.html">&#9776; Prototype map</a>
+<script>
+function showToc(id){
+  document.querySelectorAll('.toc-panel').forEach(p=>p.classList.add('hidden'));
+  document.getElementById(id).classList.remove('hidden');
+  document.querySelectorAll('.card[data-card]').forEach(c=>c.classList.remove('active'));
+  document.querySelector('.card[data-card="'+id+'"]').classList.add('active');
+}
+</script>
+</body></html>

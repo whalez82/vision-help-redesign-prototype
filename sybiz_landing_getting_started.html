@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><title>Getting Started with Vision — Sybiz Vision Help</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Poppins:wght@500;600&amp;display=swap" rel="stylesheet"/><style>
+:root{
+  --navy:#0A1133; --blue-600:#2E71A1;
+  --teal-tint:#E9F8F7; --teal-line:#B7E7E5; --teal-dark:#0E5A58;
+  --text:#1F2430; --text-2:#4B5563; --text-3:#8A94A6;
+  --line:#E3E7EE;
+  --font-body:'Inter',sans-serif; --font-head:'Poppins',sans-serif;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{font-family:var(--font-body); color:var(--text); background:#EDF0F4;}
+.frame{max-width:1180px; margin:24px auto; background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden;}
+.navbar{background:var(--navy); display:flex; align-items:center; justify-content:space-between; padding:12px 24px;}
+.navbar .brand{color:#fff; font-family:var(--font-head); font-weight:600; font-size:15px;}
+.navbar .links{color:#B9C2D6; font-size:12.5px;}
+.navbar .links span{margin-left:20px;}
+.navbar a{text-decoration:none; color:inherit;}
+.hero{background:var(--teal-tint); padding:30px 36px 26px;}
+.hero .crumbs{font-size:12px; color:var(--teal-dark); opacity:.75; margin-bottom:12px;}
+.hero h1{font-family:var(--font-head); font-weight:600; font-size:24px; color:var(--teal-dark); margin-bottom:8px;}
+.hero p{font-size:14px; color:var(--teal-dark); opacity:.85; max-width:760px; line-height:1.65; margin-bottom:18px;}
+.hero .search{background:#fff; border-radius:8px; padding:10px 14px; max-width:440px; font-size:13px; color:var(--text-3); display:flex; align-items:center; gap:8px;}
+.jnote{margin:18px 36px 0;background:#FCFDFE;border:1px dashed var(--teal-line);border-radius:9px;padding:10px 14px;font-size:12px;color:var(--text-2);line-height:1.55;}.jnote a{color:var(--teal-dark);font-weight:600;text-decoration:none;}.jnote .tag{font-size:9.5px;font-weight:700;color:var(--teal-dark);text-transform:uppercase;letter-spacing:.05em;margin-right:8px;background:var(--teal-tint);border-radius:4px;padding:2px 6px;}
+.flow-strip{display:flex;flex-wrap:wrap;gap:8px;margin:16px 36px 0;align-items:center}.flow-strip span{font-size:12px;color:var(--teal-dark);background:#fff;border:1px solid var(--teal-line);border-radius:999px;padding:6px 10px}.flow-strip b{font-size:13px;color:var(--text-3)}
+.grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(250px,1fr)); gap:14px; padding:26px 36px 10px;}
+.card{border:1px solid var(--line); border-radius:12px; padding:18px; transition:border-color .15s; cursor:pointer; background:#fff;}
+.card:hover,.card.active{border-color:var(--teal-line); background:#FBFEFD;}
+.card.active{box-shadow:0 8px 20px rgba(10,17,51,.06);}
+.card .icon{width:36px; height:36px; border-radius:9px; background:var(--teal-tint); display:flex; align-items:center; justify-content:center; margin-bottom:12px; font-size:17px;}
+.card h2{font-family:var(--font-head); font-weight:600; font-size:14.5px; margin-bottom:5px; color:var(--text);}
+.card p{font-size:12.5px; line-height:1.55; color:var(--text-2);}
+.card .count{font-size:11.5px; color:var(--text-3); margin-top:10px;}
+.detail{margin:16px 36px 32px;border:1px solid var(--line);border-radius:13px;overflow:hidden;background:#fff;}
+.detail-head{background:var(--teal-tint);border-bottom:1px solid var(--teal-line);padding:14px 18px;}
+.detail-head .eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--teal-dark);font-weight:700;margin-bottom:4px;}
+.detail-head h2{font-family:var(--font-head);font-weight:600;font-size:17px;color:var(--teal-dark);margin:0;}
+.detail-body{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;padding:18px;}
+.gcard{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;}
+.ghead{background:var(--teal-tint);color:var(--teal-dark);font-family:var(--font-head);font-weight:600;font-size:14px;text-align:center;padding:11px 14px;border-bottom:1px solid var(--teal-line);}
+table{width:100%;border-collapse:collapse;font-size:13.5px;}td{padding:10px 16px;border-bottom:1px solid var(--line);vertical-align:middle;}tr:last-child td{border-bottom:none;}.tcell{width:60%;border-right:1px solid var(--line);}.pcell{color:var(--text-2);font-size:13px;text-align:center;background:#FCFDFE;}
+.side-card{border:1px solid var(--line);border-radius:10px;padding:14px;background:#FCFDFE;margin-bottom:12px;}.side-card h3{font-family:var(--font-head);font-weight:600;font-size:13.5px;color:var(--text);margin-bottom:6px}.side-card p{font-size:12.5px;color:var(--text-2);line-height:1.55}.side-card ul{margin-left:18px;color:var(--text-2);font-size:12.5px;line-height:1.65}.hidden{display:none}.utility{padding:6px 36px 30px;}.utility .cap{font-size:11px; font-weight:600; color:var(--text-3); text-transform:uppercase; letter-spacing:.04em; border-top:1px solid var(--line); padding:18px 0 12px;}.utility .row{display:grid; grid-template-columns:repeat(auto-fill, minmax(250px,1fr)); gap:14px;}.util-card{border:1px solid var(--line); border-radius:12px; padding:14px 16px; display:flex; align-items:center; gap:12px; cursor:pointer; text-decoration:none;color:inherit}.util-card:hover{background:#FAFBFC;}.util-card .icon{width:32px; height:32px; border-radius:8px; background:#F1F4F8; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:15px;}.util-card h3{font-weight:600; font-size:13px; margin-bottom:2px;}.util-card p{font-size:11.5px; color:var(--text-2); line-height:1.5;}.prototype-map{position:fixed;right:18px;bottom:18px;z-index:99;background:#0A1133;color:#fff;font-family:Inter,sans-serif;font-size:12px;font-weight:600;padding:9px 14px;border-radius:20px;text-decoration:none;box-shadow:0 2px 10px rgba(10,17,51,.25);}
+@media(max-width:860px){.detail-body{grid-template-columns:1fr}.navbar{align-items:flex-start;gap:8px;flex-direction:column}.navbar .links span{margin-left:0;margin-right:16px}}@media(max-width:620px){.frame{margin:0;border-radius:0}.grid{grid-template-columns:1fr;padding-left:22px;padding-right:22px}.hero{padding-left:22px;padding-right:22px}.jnote,.flow-strip,.detail,.utility{margin-left:22px;margin-right:22px;padding-left:0;padding-right:0}.detail{margin-bottom:24px}.prototype-map{display:none}}
+</style></head><body>
+<div class="frame">
+<header class="navbar"><a href="sybiz_help_home.html"><span class="brand">Sybiz Vision Help</span></a><span class="links"><span>Home</span><span>Contact support</span></span></header>
+<section class="hero"><div class="crumbs"><a href="sybiz_help_home.html">Home</a>  ›  Getting Started with Vision</div><h1>Getting Started with Vision</h1><p>Use this area when users need basic orientation before they can follow detailed workflow topics. It supports first access, navigation, records, transaction basics and how to use Help.</p><div class="search">🔍  Search getting started topics, for example "change password"</div></section>
+<div class="jnote"><span class="tag">Design note</span>Each area below follows the order a user usually needs when learning Vision. <a href="#" onclick="showToc('gs-access');return false;">Start with the task-based TOC flow below ↓</a><span> The selected panels use the workbook TOC names so the prototype matches the proposed TOC.</span></div>
+<div class="flow-strip"><span>First access</span><b>→</b><span>Navigation</span><b>→</b><span>Records</span><b>→</b><span>Transactions</span><b>→</b><span>Help / F1</span><b>→</b><span>Next guide area</span></div>
+<div class="grid"><div class="card active" data-card="gs-access" onclick="showToc('gs-access')">
+<div class="icon">🔐</div>
+<h2>First access and login</h2>
+<p>Start Vision, choose the right company and reach the workspace.</p>
+<div class="count">10 workbook TOC entries</div>
+</div><div class="card" data-card="gs-navigation" onclick="showToc('gs-navigation')">
+<div class="icon">🧭</div>
+<h2>Interface and navigation</h2>
+<p>Understand ribbons, tabs, windows and common navigation tools.</p>
+<div class="count">12 workbook TOC entries</div>
+</div><div class="card" data-card="gs-records" onclick="showToc('gs-records')">
+<div class="icon">🗂️</div>
+<h2>Working with records and lists</h2>
+<p>Learn how records, lists, grids, documents and activities behave.</p>
+<div class="count">11 workbook TOC entries</div>
+</div><div class="card" data-card="gs-transactions" onclick="showToc('gs-transactions')">
+<div class="icon">🧾</div>
+<h2>Transaction basics</h2>
+<p>Understand saved, processed, printed and emailed transactions.</p>
+<div class="count">8 workbook TOC entries</div>
+</div><div class="card" data-card="gs-help" onclick="showToc('gs-help')">
+<div class="icon">❔</div>
+<h2>Using Help and F1</h2>
+<p>Find help by screen, task, workflow, role or term.</p>
+<div class="count">8 workbook TOC entries</div>
+</div><div class="card" data-card="gs-next" onclick="showToc('gs-next')">
+<div class="icon">➡️</div>
+<h2>Where to go next</h2>
+<p>Move from basic orientation into the right guide area.</p>
+<div class="count">1 workbook TOC entries</div>
+</div></div>
+<div class="detail"><div class="toc-panel" id="gs-access">
+<div class="detail-head"><div class="eyebrow">Selected task-based TOC group</div><h2>First access and login</h2></div>
+<div class="detail-body">
+<div class="gcard"><div class="ghead">Workbook TOC names and topic order</div><table><tr class="span-start"><td class="tcell">Vision at a glance</td><td class="pcell"><div><div style="margin-bottom:4px;">What Sybiz Vision is used for</div><div style="margin-bottom:4px;">How Vision work is organised</div><div style="margin-bottom:4px;">How this help is organised</div><div style="margin-bottom:4px;">Where to go next (new user / existing user / administrator / job aids / workflow guides)</div></div></td></tr><tr class="span-start"><td class="tcell">Starting and signing in</td><td class="pcell"><div><div style="margin-bottom:4px;">Start Vision, standard or touch mode</div><div style="margin-bottom:4px;">Choose a company database</div><div style="margin-bottom:4px;">Sign in with Sybiz or Windows Authentication</div><div style="margin-bottom:4px;">Change your password</div><div style="margin-bottom:4px;">Log out or switch company</div><div style="margin-bottom:4px;">Exit Vision safely</div></div></td></tr></table></div>
+<div>
+<div class="side-card"><h3>Why this group exists</h3><p>This is the first barrier for a new or occasional user. They need to get into the right company before any task-based help makes sense.</p></div>
+<div class="side-card"><h3>Typical users / moments</h3><ul><li>New staff member opening Vision for the first time</li><li>Existing user returning after a long gap</li><li>User blocked at login or company selection</li></ul></div>
+<div class="side-card"><h3>TOC names from workbook</h3><ul><li>1. Vision at a glance (4 sub-topics)</li><li>2. Starting and signing in (6 sub-topics)</li></ul></div>
+<div class="side-card"><h3>Prototype note</h3><p>Card group labels are presentation groupings. The table uses the exact TOC names from the uploaded workbook so the prototype stays aligned with the proposed TOC.</p></div></div>
+</div>
+</div><div class="toc-panel hidden" id="gs-navigation">
+<div class="detail-head"><div class="eyebrow">Selected task-based TOC group</div><h2>Interface and navigation</h2></div>
+<div class="detail-body">
+<div class="gcard"><div class="ghead">Workbook TOC names and topic order</div><table><tr class="span-start"><td class="tcell">Understanding the Vision workspace</td><td class="pcell"><div><div style="margin-bottom:4px;">Main Vision window</div><div style="margin-bottom:4px;">Application menu and ribbon bar</div><div style="margin-bottom:4px;">Vision areas and tabs, transaction windows</div><div style="margin-bottom:4px;">Quick Access toolbar and tab layout</div><div style="margin-bottom:4px;">Footers and status information</div><div style="margin-bottom:4px;">Right-click context menus, keyboard access</div></div></td></tr><tr class="span-start"><td class="tcell">Understanding Vision areas</td><td class="pcell"><div><div style="margin-bottom:4px;">What each area is used for (GL, Creditors, Debtors, Inventory, Jobs, Service, Manufacturing, Cashbook, Fixed Assets, CRM, Administration, Custom, BI)</div><div style="margin-bottom:4px;">Where common tasks belong</div></div></td></tr><tr class="span-start"><td class="tcell">Finding and reviewing information</td><td class="pcell"><div><div style="margin-bottom:4px;">Vision Search, search terms and wildcards, Quick Launch</div><div style="margin-bottom:4px;">Find, filter and save filters in a grid</div><div style="margin-bottom:4px;">Sort and group grid results</div><div style="margin-bottom:4px;">Enquiry windows and Favourites, refresh</div></div></td></tr></table></div>
+<div>
+<div class="side-card"><h3>Why this group exists</h3><p>Users often know what they need to do, but not where Vision puts the command. This group gives them the screen map before workflow-specific topics.</p></div>
+<div class="side-card"><h3>Typical users / moments</h3><ul><li>New users learning the ribbon</li><li>Existing users looking for a command after UI change</li><li>Support staff explaining where a feature sits</li></ul></div>
+<div class="side-card"><h3>TOC names from workbook</h3><ul><li>3. Understanding the Vision workspace (6 sub-topics)</li><li>4. Understanding Vision areas (2 sub-topics)</li><li>7. Finding and reviewing information (4 sub-topics)</li></ul></div>
+<div class="side-card"><h3>Prototype note</h3><p>Card group labels are presentation groupings. The table uses the exact TOC names from the uploaded workbook so the prototype stays aligned with the proposed TOC.</p></div></div>
+</div>
+</div><div class="toc-panel hidden" id="gs-records">
+<div class="detail-head"><div class="eyebrow">Selected task-based TOC group</div><h2>Working with records and lists</h2></div>
+<div class="detail-body">
+<div class="gcard"><div class="ghead">Workbook TOC names and topic order</div><table><tr class="span-start"><td class="tcell">Understanding records, transactions and enquiries</td><td class="pcell"><div><div style="margin-bottom:4px;">Records (customer, supplier, product, job, service item, GL account)</div><div style="margin-bottom:4px;">Transactions (saved, processed, documents)</div><div style="margin-bottom:4px;">Enquiries, Favourites, access-limited areas</div><div style="margin-bottom:4px;">Lookups, defaults, reports — how the pieces fit</div></div></td></tr><tr class="span-start"><td class="tcell">Documents, activities, case files and reminders</td><td class="pcell"><div><div style="margin-bottom:4px;">Attach documents and pictures to records</div><div style="margin-bottom:4px;">Link activities and case files where available</div><div style="margin-bottom:4px;">Add notes, create reminders</div><div style="margin-bottom:4px;">When to use CRM instead</div></div></td></tr><tr class="span-start"><td class="tcell">Tips for working consistently</td><td class="pcell"><div><div style="margin-bottom:4px;">Consistent names, addresses, phone formats, references, dates</div><div style="margin-bottom:4px;">Avoid duplicate records</div><div style="margin-bottom:4px;">Follow internal naming rules</div></div></td></tr></table></div>
+<div>
+<div class="side-card"><h3>Why this group exists</h3><p>Before users process transactions, they need to understand the repeated record/list pattern used across customers, suppliers, products and accounts.</p></div>
+<div class="side-card"><h3>Typical users / moments</h3><ul><li>Users creating or editing master records</li><li>Power users training others</li><li>Users confused by grids, filters or record windows</li></ul></div>
+<div class="side-card"><h3>TOC names from workbook</h3><ul><li>5. Understanding records, transactions and enquiries (4 sub-topics)</li><li>9. Documents, activities, case files and reminders (4 sub-topics)</li><li>11. Tips for working consistently (3 sub-topics)</li></ul></div>
+<div class="side-card"><h3>Prototype note</h3><p>Card group labels are presentation groupings. The table uses the exact TOC names from the uploaded workbook so the prototype stays aligned with the proposed TOC.</p></div></div>
+</div>
+</div><div class="toc-panel hidden" id="gs-transactions">
+<div class="detail-head"><div class="eyebrow">Selected task-based TOC group</div><h2>Transaction basics</h2></div>
+<div class="detail-body">
+<div class="gcard"><div class="ghead">Workbook TOC names and topic order</div><table><tr class="span-start"><td class="tcell">Working with transaction windows</td><td class="pcell"><div><div style="margin-bottom:4px;">Open new / from existing / saved</div><div style="margin-bottom:4px;">Save, save &amp; new, save &amp; close</div><div style="margin-bottom:4px;">Process, process &amp; close</div><div style="margin-bottom:4px;">Home / Actions / Options tabs, Functions or Utilities</div></div></td></tr><tr class="span-start"><td class="tcell">Previewing, printing, emailing and exporting information</td><td class="pcell"><div><div style="margin-bottom:4px;">Draft print / email preview</div><div style="margin-bottom:4px;">Transaction print settings, company vs user output</div><div style="margin-bottom:4px;">Archive and reprint transaction documents</div><div style="margin-bottom:4px;">Export grid results, filtered or grouped</div></div></td></tr></table></div>
+<div>
+<div class="side-card"><h3>Why this group exists</h3><p>This explains common transaction behaviour once, so workflow topics can focus on the business task rather than repeating basic mechanics.</p></div>
+<div class="side-card"><h3>Typical users / moments</h3><ul><li>Users creating quotes, orders, invoices or journals</li><li>Users unsure whether Save and Process are different</li><li>Users needing print/email preview guidance</li></ul></div>
+<div class="side-card"><h3>TOC names from workbook</h3><ul><li>6. Working with transaction windows (4 sub-topics)</li><li>8. Previewing, printing, emailing and exporting information (4 sub-topics)</li></ul></div>
+<div class="side-card"><h3>Prototype note</h3><p>Card group labels are presentation groupings. The table uses the exact TOC names from the uploaded workbook so the prototype stays aligned with the proposed TOC.</p></div></div>
+</div>
+</div><div class="toc-panel hidden" id="gs-help">
+<div class="detail-head"><div class="eyebrow">Selected task-based TOC group</div><h2>Using Help and F1</h2></div>
+<div class="detail-body">
+<div class="gcard"><div class="ghead">Workbook TOC names and topic order</div><table><tr class="span-start"><td class="tcell">Vision at a glance</td><td class="pcell"><div><div style="margin-bottom:4px;">How this help is organised</div><div style="margin-bottom:4px;">Where to go next (new user / existing user / administrator / job aids / workflow guides)</div></div></td></tr><tr class="span-start"><td class="tcell">Finding and reviewing information</td><td class="pcell"><div><div style="margin-bottom:4px;">Vision Search, search terms and wildcards, Quick Launch</div><div style="margin-bottom:4px;">Enquiry windows and Favourites, refresh</div></div></td></tr><tr class="span-start"><td class="tcell">When something looks unavailable</td><td class="pcell"><div><div style="margin-bottom:4px;">Why a button is greyed out or a field is read-only</div><div style="margin-bottom:4px;">Rights and access restrictions</div><div style="margin-bottom:4px;">Saved vs unsaved, processed vs unprocessed state</div><div style="margin-bottom:4px;">Warning and error icons, when to ask your administrator</div></div></td></tr></table></div>
+<div>
+<div class="side-card"><h3>Why this group exists</h3><p>This connects existing F1 help with the redesigned Home and workflow entry points, so users understand both ways to reach content.</p></div>
+<div class="side-card"><h3>Typical users / moments</h3><ul><li>User pressing F1 from a Vision screen</li><li>User starting from Help Home</li><li>User unsure whether to search, browse or use glossary</li></ul></div>
+<div class="side-card"><h3>TOC names from workbook</h3><ul><li>1. Vision at a glance (2 sub-topics)</li><li>7. Finding and reviewing information (2 sub-topics)</li><li>10. When something looks unavailable (4 sub-topics)</li></ul></div>
+<div class="side-card"><h3>Prototype note</h3><p>Card group labels are presentation groupings. The table uses the exact TOC names from the uploaded workbook so the prototype stays aligned with the proposed TOC.</p></div></div>
+</div>
+</div><div class="toc-panel hidden" id="gs-next">
+<div class="detail-head"><div class="eyebrow">Selected task-based TOC group</div><h2>Where to go next</h2></div>
+<div class="detail-body">
+<div class="gcard"><div class="ghead">Workbook TOC names and topic order</div><table><tr class="span-start"><td class="tcell">Vision at a glance</td><td class="pcell"><div><div style="margin-bottom:4px;">Where to go next (new user / existing user / administrator / job aids / workflow guides)</div></div></td></tr></table></div>
+<div>
+<div class="side-card"><h3>Why this group exists</h3><p>Getting Started should not become a long manual by itself. It should point users to the right next area once they understand the basics.</p></div>
+<div class="side-card"><h3>Typical users / moments</h3><ul><li>New user ready to do daily work</li><li>Admin ready to configure Vision</li><li>Role-based user looking for daily tasks</li></ul></div>
+<div class="side-card"><h3>TOC names from workbook</h3><ul><li>1. Vision at a glance (1 sub-topics)</li></ul></div>
+<div class="side-card"><h3>Prototype note</h3><p>Card group labels are presentation groupings. The table uses the exact TOC names from the uploaded workbook so the prototype stays aligned with the proposed TOC.</p></div></div>
+</div>
+</div></div>
+<div class="utility"><div class="cap">Related presentation pages</div><div class="row"><a class="util-card" href="sybiz_landing_setup_admin.html"><div class="icon">🛡️</div><div><h3>Setup and Administration</h3><p>For administrators and implementers after the basic orientation.</p></div></a><a class="util-card" href="sybiz_user_guide_landing.html"><div class="icon">🛠️</div><div><h3>Workflow-Based User Guide</h3><p>For users ready to complete daily business tasks.</p></div></a></div></div>
+</div>
+<a class="prototype-map" href="index.html">☰ Prototype map</a>
+<script>
+function showToc(id){
+  document.querySelectorAll('.toc-panel').forEach(p=>p.classList.add('hidden'));
+  document.getElementById(id).classList.remove('hidden');
+  document.querySelectorAll('.card[data-card]').forEach(c=>c.classList.remove('active'));
+  document.querySelector('.card[data-card="'+id+'"]').classList.add('active');
+}
+</script>
+</body></html>

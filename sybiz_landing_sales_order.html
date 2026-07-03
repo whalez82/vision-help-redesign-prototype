@@ -1,0 +1,98 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>Sales and Order Management — Sybiz Vision Help (preview)</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0A1133;--blue-600:#2E71A1;--teal-tint:#E9F8F7;--teal-line:#B7E7E5;--teal-dark:#0E5A58;
+--text:#1F2430;--text-2:#4B5563;--text-3:#8A94A6;--line:#E3E7EE;
+--font-body:'Inter',sans-serif;--font-head:'Poppins',sans-serif;--font-mono:'JetBrains Mono',monospace;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--font-body);color:var(--text);background:#EDF0F4;}
+.frame{max-width:1180px;margin:24px auto;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;}
+.navbar{background:var(--navy);display:flex;align-items:center;justify-content:space-between;padding:12px 24px;}
+.navbar .brand{color:#fff;font-family:var(--font-head);font-weight:600;font-size:15px;}
+.navbar .links{color:#B9C2D6;font-size:12.5px;}
+.navbar .links span{margin-left:20px;}
+.hero{background:var(--teal-tint);padding:30px 36px 26px;}
+.hero .crumbs{font-size:12px;color:var(--teal-dark);opacity:.75;margin-bottom:12px;}
+.hero h1{font-family:var(--font-head);font-weight:600;font-size:24px;color:var(--teal-dark);margin-bottom:8px;}
+.hero p{font-size:14px;color:var(--teal-dark);opacity:.85;max-width:740px;line-height:1.65;margin-bottom:18px;}
+.hero .search{background:#fff;border-radius:8px;padding:10px 14px;max-width:440px;font-size:13px;color:var(--text-3);display:flex;align-items:center;gap:8px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:14px;padding:14px 36px 10px;}
+.card{border:1px solid var(--line);border-radius:12px;padding:18px;transition:border-color .15s, background .15s, box-shadow .15s;cursor:pointer;background:#fff;}
+.card:hover{border-color:var(--teal-line);background:#FBFEFD;}
+.card.active{border-color:var(--teal-line);background:#FBFEFD;box-shadow:0 0 0 2px rgba(183,231,229,.45) inset;}
+.card .icon{width:36px;height:36px;border-radius:9px;background:var(--teal-tint);display:flex;align-items:center;justify-content:center;margin-bottom:12px;font-size:17px;}
+.card h2{font-family:var(--font-head);font-weight:600;font-size:14.5px;margin-bottom:5px;color:var(--text);}
+.card p{font-size:12.5px;line-height:1.55;color:var(--text-2);}
+.card .count{font-size:11.5px;color:var(--text-3);margin-top:10px;}
+.utility{padding:6px 36px 30px;}
+.utility .cap,.cap{font-size:11px;font-weight:600;color:var(--text-3);text-transform:uppercase;letter-spacing:.04em;border-top:1px solid var(--line);padding:18px 0 12px;}
+.utility .row{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:14px;}
+.util-card{border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:flex;align-items:center;gap:12px;cursor:pointer;}
+.util-card:hover{background:#FAFBFC;}
+.util-card .icon{width:32px;height:32px;border-radius:8px;background:#F1F4F8;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px;}
+.util-card h3{font-weight:600;font-size:13px;margin-bottom:2px;}
+.util-card p{font-size:11.5px;color:var(--text-2);line-height:1.5;}
+.flow{padding:24px 36px 4px;}
+.flow .cap{border-top:none;padding-top:0;margin-bottom:12px;}
+.flow .chain{display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+.flow .node{background:var(--navy);color:#fff;font-size:11.5px;font-weight:600;border-radius:7px;padding:8px 13px;}
+.flow .arr{color:var(--text-3);font-size:13px;}
+.jnote{margin:18px 36px 0;background:#FCFDFE;border:1px dashed var(--teal-line);border-radius:9px;padding:10px 14px;font-size:12px;color:var(--text-2);}.jnote a{color:var(--teal-dark);font-weight:600;text-decoration:none;}.jnote .tag{font-size:9.5px;font-weight:700;color:var(--teal-dark);text-transform:uppercase;letter-spacing:.05em;margin-right:8px;background:var(--teal-tint);border-radius:4px;padding:2px 6px;}
+.explain{padding:20px 36px 0;display:grid;grid-template-columns:1.05fr .95fr;gap:14px;}
+.info-card{border:1px solid var(--line);border-radius:12px;background:#FCFDFE;padding:16px 17px;}
+.info-card h3{font-family:var(--font-head);font-size:14px;margin-bottom:6px;color:var(--text);}
+.info-card p{font-size:12.8px;line-height:1.6;color:var(--text-2);}
+.toc-detail{margin:18px 36px 8px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;}
+.toc-detail-head{background:var(--teal-tint);border-bottom:1px solid var(--teal-line);padding:13px 16px;}
+.toc-detail-head .eyebrow{font-size:10px;font-weight:700;color:var(--teal-dark);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;}
+.toc-detail-head h3{font-family:var(--font-head);font-size:16px;color:var(--teal-dark);font-weight:600;}
+.toc-detail-body{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;padding:16px;}
+.toc-detail-body h4{font-size:12px;color:var(--text-3);text-transform:uppercase;letter-spacing:.04em;margin:0 0 8px;}
+.toc-detail-body p{font-size:13px;line-height:1.6;color:var(--text-2);margin-bottom:10px;}
+.topic-list{display:grid;gap:7px;}
+.topic-list a,.topic-list div{display:block;text-decoration:none;border:1px solid var(--line);border-radius:8px;background:#FCFDFE;padding:8px 10px;font-size:12.5px;color:var(--text);}
+.topic-list a:hover{border-color:var(--teal-line);background:var(--teal-tint);color:var(--teal-dark);}
+.result-box{border-left:3px solid var(--blue-600);background:#EAF2FB;color:#123A5C;border-radius:0 8px 8px 0;padding:11px 13px;font-size:12.8px;line-height:1.55;margin-top:8px;}
+.small-link{display:inline-block;margin-top:8px;color:var(--blue-600);font-weight:600;text-decoration:none;font-size:12.5px;}
+@media (max-width:900px){.explain,.toc-detail-body{grid-template-columns:1fr}.navbar{align-items:flex-start;gap:10px;flex-direction:column}}
+@media (max-width:620px){.frame{margin:0;border-radius:0;border-left:none;border-right:none}.grid{grid-template-columns:1fr}.hero,.flow,.explain{padding-left:20px;padding-right:20px}.jnote,.toc-detail,.utility{margin-left:20px;margin-right:20px;padding-left:0;padding-right:0}.toc-detail{margin-left:20px;margin-right:20px}.flow .node{width:100%;text-align:center}.flow .arr{display:none}}
+</style></head><body><div class="frame">
+<header class="navbar"><a href="sybiz_help_home.html" style="text-decoration:none;"><span class="brand">Sybiz Vision Help</span></a>
+<span class="links"><span>Home</span><span>Contact support</span></span></header>
+<section class="hero"><div class="crumbs"><a href="sybiz_help_home.html" style="color:inherit;">Home</a> &nbsp;&rsaquo;&nbsp; <a href="sybiz_user_guide_landing.html" style="color:inherit;">Workflow-Based User Guide</a> &nbsp;&rsaquo;&nbsp; Sales and Order Management</div><h1>Sales and Order Management</h1><p>To record what customers want and move it through quotes, orders, delivery, invoicing, payment and follow-up. This page presents the section logic: the user task flow first, then the task-based TOC that follows that flow.</p>
+<div class="search">&#128269;&nbsp; Search, for example &quot;create a sales order&quot;</div></section>
+<div class="jnote"><span class="tag">Presentation note</span>This page shows why the Sales TOC is arranged this way. It is not replacing F1 mapping; it gives users a workflow entry into the same help topics.</div>
+
+<div class="explain"><div class="info-card"><h3>Why this section exists</h3><p>Sales users usually think in terms of the work they are trying to finish: quote, order, pick, deliver, invoice, receive payment, or review what is outstanding. The TOC is therefore arranged by the normal order of sales work rather than by ribbon position only.</p></div><div class="info-card"><h3>Who comes here</h3><p>Sales admin, customer service, warehouse/dispatch, accounts receivable and managers reviewing sales activity. Existing users can still use F1 or the Ribbon and Menu reference when they know the exact screen.</p></div></div>
+
+<div class="flow"><div class="cap">User task flow behind this TOC</div><div class="chain"><span class="node">Set up sales</span><span class="arr">&#8594;</span><span class="node">Quote and order</span><span class="arr">&#8594;</span><span class="node">Pick, pack and deliver</span><span class="arr">&#8594;</span><span class="node">Invoice customers</span><span class="arr">&#8594;</span><span class="node">Receive payments</span><span class="arr">&#8594;</span><span class="node">Follow up / review</span></div></div>
+
+<div class="toc-detail" id="tocDetail"><div class="toc-detail-head"><div class="eyebrow">Selected task-based TOC group</div><h3 id="detailTitle">Quote and order</h3></div><div class="toc-detail-body"><div><h4>Purpose and result</h4><p id="detailPurpose">Use this group when creating, changing or reviewing customer quotes and sales orders. The output is a saved or processed quote/order that can move to picking, delivery, invoicing or review.</p><div class="result-box" id="detailResult">F1 compatibility: users can still press F1 from the Sales Quote or Sales Order screen to reach the mapped topic. This TOC gives another route into the same content.</div><a class="small-link" id="detailLink" href="sybiz_topic_preview.html">Open sample topic page &#8594;</a></div><div><h4>Topics in this group</h4><div class="topic-list" id="detailTopics"><a href="sybiz_topic_preview.html">Create a sales quote</a><a href="sybiz_topic_preview.html">Convert a sales quote to a sales order</a><a href="sybiz_topic_preview.html">Create a sales order</a><a href="sybiz_topic_preview.html">Edit a sales order</a><a href="sybiz_topic_preview.html">Review outstanding sales orders</a></div></div></div></div>
+
+<div class="grid" aria-label="Task-based TOC cards">
+  <div class="card" data-toc="setup"><div class="icon">&#128736;&#65039;</div><h2>Set up sales</h2><p>Create customers, trading terms, delivery methods, pricing and opening balances.</p><div class="count">9 articles</div></div>
+  <div class="card active" data-toc="quote"><div class="icon">&#128722;</div><h2>Quote and order</h2><p>Create and convert quotes, create and edit sales orders, deposits and back orders.</p><div class="count">10 articles</div></div>
+  <div class="card" data-toc="deliver"><div class="icon">&#128230;</div><h2>Pick, pack and deliver</h2><p>Allocate stock, pick and pack orders, handle shortages and process deliveries.</p><div class="count">7 articles</div></div>
+  <div class="card" data-toc="invoice"><div class="icon">&#129534;</div><h2>Invoice customers</h2><p>Create customer invoices from orders, deliveries, or other supported sales workflows.</p><div class="count">8 articles</div></div>
+  <div class="card" data-toc="credits"><div class="icon">&#8617;&#65039;</div><h2>Customer credits and returns</h2><p>Process returned goods, apply credits and refund customers.</p><div class="count">5 articles</div></div>
+  <div class="card" data-toc="payments"><div class="icon">&#128176;</div><h2>Receive customer payments</h2><p>Receive and allocate payments, offsets, overpayments and bad debts.</p><div class="count">8 articles</div></div>
+  <div class="card" data-toc="follow"><div class="icon">&#128231;</div><h2>Customer follow-up</h2><p>Statements, finance charges and resolving disputed invoices.</p><div class="count">5 articles</div></div>
+  <div class="card" data-toc="review"><div class="icon">&#128200;</div><h2>Sales enquiries and review</h2><p>Customer enquiries, transaction history, balances, analytics and reports.</p><div class="count">7 articles</div></div>
+</div>
+<div class="utility"><div class="cap">Quick help</div><div class="row"><div class="util-card" data-toc="trouble"><div class="icon">&#128736;&#65039;</div><div><h3>Sales troubleshooting</h3><p>What to check when buttons are greyed out, orders are missing, or totals look wrong.</p></div></div></div></div></div><a href="index.html" style="position:fixed;right:18px;bottom:18px;z-index:99;background:#0A1133;color:#fff;font-family:Inter,sans-serif;font-size:12px;font-weight:600;padding:9px 14px;border-radius:20px;text-decoration:none;box-shadow:0 2px 10px rgba(10,17,51,.25);">&#9776; Prototype map</a>
+<script>
+const tocData={
+setup:{title:'Set up sales',purpose:'Use this group before customer sales transactions begin. The output is a customer and sales setup that is ready for quotes, orders, pricing, delivery and opening balances.',result:'F1 compatibility: setup topics can still be reached from their own maintenance screens; this TOC explains why setup appears before transactions.',topics:['Create a customer','Set up customer groups','Set up trading terms and credit limits','Set up delivery methods','Set up sales pricing','Enter customer opening balances']},
+quote:{title:'Quote and order',purpose:'Use this group when creating, changing or reviewing customer quotes and sales orders. The output is a saved or processed quote/order that can move to picking, delivery, invoicing or review.',result:'F1 compatibility: users can still press F1 from the Sales Quote or Sales Order screen to reach the mapped topic. This TOC gives another route into the same content.',topics:['Create a sales quote','Convert a sales quote to a sales order','Create a sales order','Edit a sales order','Add a deposit to a sales order','Review outstanding sales orders'],link:'sybiz_topic_preview.html'},
+deliver:{title:'Pick, pack and deliver',purpose:'Use this group when an order needs to be fulfilled. The output is allocated or picked stock, a packed order, or a processed customer delivery.',result:'Next step: after picking and delivery, the order is usually ready for invoicing or review.',topics:['Allocate stock to a sales order','Pick a sales order','Pack a picked order','Handle a stock shortage during picking','Process a sales delivery','Review outstanding sales picks']},
+invoice:{title:'Invoice customers',purpose:'Use this group when the sale needs to become an invoice. The output is a customer invoice created from an order, a delivery, or another supported sales workflow.',result:'Next step: print/email the invoice, receive payment, or review unpaid invoices.',topics:['Create a sales invoice','Create a sales invoice from an order or delivery','Invoice and deliver together','Invoice all delivered orders','Add a service line to a sales invoice','Print or email a sales invoice']},
+credits:{title:'Customer credits and returns',purpose:'Use this group when goods come back or a customer balance needs to be corrected. The output is a return, credit, refund or corrected customer balance.',result:'Next step: review credit history or customer balance to confirm the correction.',topics:['Process returned goods','Create returned goods','Apply credit to a customer balance','Refund a customer','Review customer credit history']},
+payments:{title:'Receive customer payments',purpose:'Use this group when money arrives from a customer. The output is a receipt allocated to invoices, an offset, a payment on account, or a balance adjustment.',result:'Next step: review outstanding customer balances or continue through Cashbook/bank reconciliation as required.',topics:['Receive a customer payment','Allocate a receipt to invoices','Use customer offset','Handle payments on account','Handle overpayments and short payments','Process customer receipts through Cashbook']},
+follow:{title:'Customer follow-up',purpose:'Use this group when the customer still needs to be reminded, charged, disputed or resolved. The output is a statement, finance charge, dispute update or settled difference.',result:'Next step: review outstanding balances to confirm nothing is left unresolved.',topics:['Generate customer statements','Process finance charges','Use customer offset','Dispute or resolve a customer invoice','Review outstanding balances']},
+review:{title:'Sales enquiries and review',purpose:'Use this group when the user needs to look up sales activity rather than create a new transaction. The output is visibility: customer history, balances, outstanding orders, analytics or reports.',result:'This is placed after the transaction flow because review normally happens after work has been entered or when a user needs to investigate status.',topics:['View customer enquiries','Review transaction history','Review outstanding orders','Review unpaid invoices','Review customer balances','Review sales analytics','Run debtor reports']},
+trouble:{title:'Sales troubleshooting',purpose:'Use this group when the expected action is blocked or the result does not look right. The output is a guided check path rather than a normal transaction.',result:'This supports common support-style questions without burying them inside the standard workflow.',topics:['Sales order button is greyed out','Pick option is not available','Sales order is not in the expected list','Record is locked or in use by another user','Invoice cannot be processed','Customer credit limit warning appears']}
+};
+function selectToc(key){const d=tocData[key]||tocData.quote;document.getElementById('detailTitle').textContent=d.title;document.getElementById('detailPurpose').textContent=d.purpose;document.getElementById('detailResult').textContent=d.result;document.getElementById('detailLink').href=d.link||'sybiz_topic_preview.html';document.getElementById('detailLink').style.display=d.link?'inline-block':'none';const box=document.getElementById('detailTopics');box.innerHTML=d.topics.map((t,i)=>`<a href="${d.link||'#'}">${t}</a>`).join('');document.querySelectorAll('[data-toc]').forEach(c=>c.classList.toggle('active',c.getAttribute('data-toc')===key));}
+document.querySelectorAll('[data-toc]').forEach(card=>card.addEventListener('click',()=>selectToc(card.getAttribute('data-toc'))));
+</script></body></html>

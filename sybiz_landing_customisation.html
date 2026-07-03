@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><title>Customisation and Extensions — Sybiz Vision Help</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Poppins:wght@500;600&amp;display=swap" rel="stylesheet"/><style>
+:root{
+  --navy:#0A1133; --blue-600:#2E71A1;
+  --teal-tint:#E9F8F7; --teal-line:#B7E7E5; --teal-dark:#0E5A58;
+  --text:#1F2430; --text-2:#4B5563; --text-3:#8A94A6;
+  --line:#E3E7EE;
+  --font-body:'Inter',sans-serif; --font-head:'Poppins',sans-serif;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{font-family:var(--font-body); color:var(--text); background:#EDF0F4;}
+.frame{max-width:1180px; margin:24px auto; background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden;}
+.navbar{background:var(--navy); display:flex; align-items:center; justify-content:space-between; padding:12px 24px;}
+.navbar .brand{color:#fff; font-family:var(--font-head); font-weight:600; font-size:15px;}
+.navbar .links{color:#B9C2D6; font-size:12.5px;}
+.navbar .links span{margin-left:20px;}
+.navbar a{text-decoration:none; color:inherit;}
+.hero{background:var(--teal-tint); padding:30px 36px 26px;}
+.hero .crumbs{font-size:12px; color:var(--teal-dark); opacity:.75; margin-bottom:12px;}
+.hero h1{font-family:var(--font-head); font-weight:600; font-size:24px; color:var(--teal-dark); margin-bottom:8px;}
+.hero p{font-size:14px; color:var(--teal-dark); opacity:.85; max-width:760px; line-height:1.65; margin-bottom:18px;}
+.hero .search{background:#fff; border-radius:8px; padding:10px 14px; max-width:440px; font-size:13px; color:var(--text-3); display:flex; align-items:center; gap:8px;}
+.jnote{margin:18px 36px 0;background:#FCFDFE;border:1px dashed var(--teal-line);border-radius:9px;padding:10px 14px;font-size:12px;color:var(--text-2);line-height:1.55;}.jnote a{color:var(--teal-dark);font-weight:600;text-decoration:none;}.jnote .tag{font-size:9.5px;font-weight:700;color:var(--teal-dark);text-transform:uppercase;letter-spacing:.05em;margin-right:8px;background:var(--teal-tint);border-radius:4px;padding:2px 6px;}
+.flow-strip{display:flex;flex-wrap:wrap;gap:8px;margin:16px 36px 0;align-items:center}.flow-strip span{font-size:12px;color:var(--teal-dark);background:#fff;border:1px solid var(--teal-line);border-radius:999px;padding:6px 10px}.flow-strip b{font-size:13px;color:var(--text-3)}
+.grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(250px,1fr)); gap:14px; padding:26px 36px 10px;}
+.card{border:1px solid var(--line); border-radius:12px; padding:18px; transition:border-color .15s; cursor:pointer; background:#fff;}
+.card:hover,.card.active{border-color:var(--teal-line); background:#FBFEFD;}
+.card.active{box-shadow:0 8px 20px rgba(10,17,51,.06);}
+.card .icon{width:36px; height:36px; border-radius:9px; background:var(--teal-tint); display:flex; align-items:center; justify-content:center; margin-bottom:12px; font-size:17px;}
+.card h2{font-family:var(--font-head); font-weight:600; font-size:14.5px; margin-bottom:5px; color:var(--text);}
+.card p{font-size:12.5px; line-height:1.55; color:var(--text-2);}
+.card .count{font-size:11.5px; color:var(--text-3); margin-top:10px;}
+.detail{margin:16px 36px 32px;border:1px solid var(--line);border-radius:13px;overflow:hidden;background:#fff;}
+.detail-head{background:var(--teal-tint);border-bottom:1px solid var(--teal-line);padding:14px 18px;}
+.detail-head .eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--teal-dark);font-weight:700;margin-bottom:4px;}
+.detail-head h2{font-family:var(--font-head);font-weight:600;font-size:17px;color:var(--teal-dark);margin:0;}
+.detail-body{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;padding:18px;}
+.gcard{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;}
+.ghead{background:var(--teal-tint);color:var(--teal-dark);font-family:var(--font-head);font-weight:600;font-size:14px;text-align:center;padding:11px 14px;border-bottom:1px solid var(--teal-line);}
+table{width:100%;border-collapse:collapse;font-size:13.5px;}td{padding:10px 16px;border-bottom:1px solid var(--line);vertical-align:middle;}tr:last-child td{border-bottom:none;}.tcell{width:60%;border-right:1px solid var(--line);}.pcell{color:var(--text-2);font-size:13px;text-align:center;background:#FCFDFE;}
+.side-card{border:1px solid var(--line);border-radius:10px;padding:14px;background:#FCFDFE;margin-bottom:12px;}.side-card h3{font-family:var(--font-head);font-weight:600;font-size:13.5px;color:var(--text);margin-bottom:6px}.side-card p{font-size:12.5px;color:var(--text-2);line-height:1.55}.side-card ul{margin-left:18px;color:var(--text-2);font-size:12.5px;line-height:1.65}.hidden{display:none}.utility{padding:6px 36px 30px;}.utility .cap{font-size:11px; font-weight:600; color:var(--text-3); text-transform:uppercase; letter-spacing:.04em; border-top:1px solid var(--line); padding:18px 0 12px;}.utility .row{display:grid; grid-template-columns:repeat(auto-fill, minmax(250px,1fr)); gap:14px;}.util-card{border:1px solid var(--line); border-radius:12px; padding:14px 16px; display:flex; align-items:center; gap:12px; cursor:pointer; text-decoration:none;color:inherit}.util-card:hover{background:#FAFBFC;}.util-card .icon{width:32px; height:32px; border-radius:8px; background:#F1F4F8; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:15px;}.util-card h3{font-weight:600; font-size:13px; margin-bottom:2px;}.util-card p{font-size:11.5px; color:var(--text-2); line-height:1.5;}.prototype-map{position:fixed;right:18px;bottom:18px;z-index:99;background:#0A1133;color:#fff;font-family:Inter,sans-serif;font-size:12px;font-weight:600;padding:9px 14px;border-radius:20px;text-decoration:none;box-shadow:0 2px 10px rgba(10,17,51,.25);}
+@media(max-width:860px){.detail-body{grid-template-columns:1fr}.navbar{align-items:flex-start;gap:8px;flex-direction:column}.navbar .links span{margin-left:0;margin-right:16px}}@media(max-width:620px){.frame{margin:0;border-radius:0}.grid{grid-template-columns:1fr;padding-left:22px;padding-right:22px}.hero{padding-left:22px;padding-right:22px}.jnote,.flow-strip,.detail,.utility{margin-left:22px;margin-right:22px;padding-left:0;padding-right:0}.detail{margin-bottom:24px}.prototype-map{display:none}}
+</style></head><body>
+<div class="frame">
+<header class="navbar"><a href="sybiz_help_home.html"><span class="brand">Sybiz Vision Help</span></a><span class="links"><span>Home</span><span>Contact support</span></span></header>
+<section class="hero"><div class="crumbs"><a href="sybiz_help_home.html">Home</a>  ›  Customisation and Extensions</div><h1>Customisation and Extensions</h1><p>Use this area when Vision needs to be adapted to a business’s forms, reports, fields, data, layouts, integrations or changing processes.</p><div class="search">🔍  Search customisation topics, for example "edit invoice layout"</div></section>
+<div class="jnote"><span class="tag">Design note</span>Each area below follows the order of a business change: identify the need, choose the customisation area, configure, test and maintain. <a href="#" onclick="showToc('custom-need');return false;">See the customisation TOC flow below ↓</a><span> The selected panels use the workbook TOC names so the prototype matches the proposed TOC.</span></div>
+<div class="flow-strip"><span>Business need</span><b>→</b><span>Fields / data</span><b>→</b><span>Support objects</span><b>→</b><span>Reports / forms</span><b>→</b><span>Import / export</span><b>→</b><span>Extensions</span></div>
+<div class="grid"><div class="card active" data-card="custom-need" onclick="showToc('custom-need')">
+<div class="icon">🔎</div>
+<h2>Identify the business change</h2>
+<p>Start from the reason Vision needs to be adapted.</p>
+<div class="count">5 workbook TOC entries</div>
+</div><div class="card" data-card="custom-fields" onclick="showToc('custom-fields')">
+<div class="icon">🏷️</div>
+<h2>Custom fields and supporting data</h2>
+<p>Capture business-specific data that is not covered by standard fields.</p>
+<div class="count">6 workbook TOC entries</div>
+</div><div class="card" data-card="custom-layout" onclick="showToc('custom-layout')">
+<div class="icon">🧱</div>
+<h2>Screen, list and workflow support objects</h2>
+<p>Adjust supporting structures users interact with.</p>
+<div class="count">12 workbook TOC entries</div>
+</div><div class="card" data-card="custom-reports" onclick="showToc('custom-reports')">
+<div class="icon">📄</div>
+<h2>Reports and transaction documents</h2>
+<p>Modify printed output, reports, forms, logos and layouts.</p>
+<div class="count">6 workbook TOC entries</div>
+</div><div class="card" data-card="custom-data" onclick="showToc('custom-data')">
+<div class="icon">🔁</div>
+<h2>Import, export and bulk updates</h2>
+<p>Move or update data efficiently for setup, cleanup or change management.</p>
+<div class="count">7 workbook TOC entries</div>
+</div><div class="card" data-card="custom-ext" onclick="showToc('custom-ext')">
+<div class="icon">🔌</div>
+<h2>Extensions, integrations and maintenance</h2>
+<p>Connect Vision to apps, add-ons or advanced behaviours.</p>
+<div class="count">10 workbook TOC entries</div>
+</div></div>
+<div class="detail"><div class="toc-panel" id="custom-need">
+<div class="detail-head"><div class="eyebrow">Selected task-based TOC group</div><h2>Identify the business change</h2></div>
+<div class="detail-body">
+<div class="gcard"><div class="ghead">Workbook TOC names and topic order</div><table><tr class="span-start"><td class="tcell">Customisation overview</td><td class="pcell"><div><div style="margin-bottom:4px;">Present your data your way (grids, pivots, enquiries, search, external apps)</div><div style="margin-bottom:4px;">Where customisations appear on screen</div><div style="margin-bottom:4px;">Sort order and hyperlink fields (_Email/_URL/_File)</div><div style="margin-bottom:4px;">Parse, execute and design a query (right-click menu)</div></div></td></tr><tr class="span-start"><td class="tcell">Connected tools and module use cases</td><td class="pcell"><div><div style="margin-bottom:4px;">To be authored — scenario-based, no direct source file</div></div></td></tr></table></div>
+<div>
+<div class="side-card"><h3>Why this group exists</h3><p>Customisation should start with a business need, not with a tool. This keeps the section practical and avoids making users browse technical features first.</p></div>
+<div class="side-card"><h3>Typical users / moments</h3><ul><li>Business changes process or reporting need</li><li>Consultant scoping configuration work</li><li>Power user deciding whether setup or customisation is required</li></ul></div>
+<div class="side-card"><h3>TOC names from workbook</h3><ul><li>1. Customisation overview (4 sub-topics)</li><li>12. Connected tools and module use cases (1 sub-topics)</li></ul></div>
+<div class="side-card"><h3>Prototype note</h3><p>Card group labels are presentation groupings. The table uses the exact TOC names from the uploaded workbook so the prototype stays aligned with the proposed TOC.</p></div></div>
+</div>
+</div><div class="toc-panel hidden" id="custom-fields">
+<div class="detail-head"><div class="eyebrow">Selected task-based TOC group</div><h2>Custom fields and supporting data</h2></div>
+<div class="detail-body">
+<div class="gcard"><div class="ghead">Workbook TOC names and topic order</div><table><tr class="span-start"><td class="tcell">Custom fields and data capture</td><td class="pcell"><div><div style="margin-bottom:4px;">Understand appearance and field types (URL / email / file)</div><div style="margin-bottom:4px;">Add a custom field</div><div style="margin-bottom:4px;">Delete a custom field</div><div style="margin-bottom:4px;">Enable a custom field for a transaction type</div></div></td></tr><tr class="span-start"><td class="tcell">Managing customisation access</td><td class="pcell"><div><div style="margin-bottom:4px;">Understand customisation rights categories</div><div style="margin-bottom:4px;">Assign customisation rights to a role</div></div></td></tr></table></div>
+<div>
+<div class="side-card"><h3>Why this group exists</h3><p>Custom fields are about adapting data capture to the business, so they belong outside daily transaction flows.</p></div>
+<div class="side-card"><h3>Typical users / moments</h3><ul><li>Admin adding a new business field</li><li>Power user standardising extra classifications</li><li>Report writer needing data for output</li></ul></div>
+<div class="side-card"><h3>TOC names from workbook</h3><ul><li>3. Custom fields and data capture (4 sub-topics)</li><li>13. Managing customisation access (2 sub-topics)</li></ul></div>
+<div class="side-card"><h3>Prototype note</h3><p>Card group labels are presentation groupings. The table uses the exact TOC names from the uploaded workbook so the prototype stays aligned with the proposed TOC.</p></div></div>
+</div>
+</div><div class="toc-panel hidden" id="custom-layout">
+<div class="detail-head"><div class="eyebrow">Selected task-based TOC group</div><h2>Screen, list and workflow support objects</h2></div>
+<div class="detail-body">
+<div class="gcard"><div class="ghead">Workbook TOC names and topic order</div><table><tr class="span-start"><td class="tcell">Screen layouts and user states</td><td class="pcell"><div><div style="margin-bottom:4px;">Understand default vs. current user state</div><div style="margin-bottom:4px;">Set a default user state for a user</div><div style="margin-bottom:4px;">Clear a user's saved state</div><div style="margin-bottom:4px;">What happens to your own layout changes on logout</div></div></td></tr><tr class="span-start"><td class="tcell">Custom grids, pivots and dashboards</td><td class="pcell"><div><div style="margin-bottom:4px;">Build a custom grid (Main, Configuration, Design, Advanced tabs — auto/interactive refresh)</div><div style="margin-bottom:4px;">Build a custom pivot (Main, Pivot Design tabs)</div><div style="margin-bottom:4px;">Build a custom dashboard (Designer window, adding a chart/grid, drill downs)</div></div></td></tr><tr class="span-start"><td class="tcell">Custom enquiries, search and panels</td><td class="pcell"><div><div style="margin-bottom:4px;">Choose an enquiry type — Summary, Transactions, Grid, Pivot or Dashboard (each with its own tab set)</div><div style="margin-bottom:4px;">Build a custom search term</div><div style="margin-bottom:4px;">Add a custom panel (Main window, Design window)</div></div></td></tr><tr class="span-start"><td class="tcell">Custom schedulers</td><td class="pcell"><div><div style="margin-bottom:4px;">Understand the Custom Scheduler main window</div><div style="margin-bottom:4px;">Build a scheduler view</div></div></td></tr></table></div>
+<div>
+<div class="side-card"><h3>Why this group exists</h3><p>These items affect how users work with Vision but are not themselves the end-to-end business workflow.</p></div>
+<div class="side-card"><h3>Typical users / moments</h3><ul><li>Admin adjusting list values</li><li>Power user maintaining templates</li><li>Team lead standardising data entry</li></ul></div>
+<div class="side-card"><h3>TOC names from workbook</h3><ul><li>2. Screen layouts and user states (4 sub-topics)</li><li>4. Custom grids, pivots and dashboards (3 sub-topics)</li><li>5. Custom enquiries, search and panels (3 sub-topics)</li><li>6. Custom schedulers (2 sub-topics)</li></ul></div>
+<div class="side-card"><h3>Prototype note</h3><p>Card group labels are presentation groupings. The table uses the exact TOC names from the uploaded workbook so the prototype stays aligned with the proposed TOC.</p></div></div>
+</div>
+</div><div class="toc-panel hidden" id="custom-reports">
+<div class="detail-head"><div class="eyebrow">Selected task-based TOC group</div><h2>Reports and transaction documents</h2></div>
+<div class="detail-body">
+<div class="gcard"><div class="ghead">Workbook TOC names and topic order</div><table><tr class="span-start"><td class="tcell">Reports and document layouts</td><td class="pcell"><div><div style="margin-bottom:4px;">Open and preview an existing report in Report Designer</div><div style="margin-bottom:4px;">Make basic changes: text labels, filters, page settings</div><div style="margin-bottom:4px;">Choose a report query type (direct query, Query Builder, stored procedure)</div><div style="margin-bottom:4px;">Edit a report layout: bands, controls, positioning</div><div style="margin-bottom:4px;">Save, import and copy a report to another company</div><div style="margin-bottom:4px;">Know when to consult DevExpress documentation for deeper layout changes</div></div></td></tr></table></div>
+<div>
+<div class="side-card"><h3>Why this group exists</h3><p>Report and document layout work is driven by business presentation and reporting needs, not by one daily transaction only.</p></div>
+<div class="side-card"><h3>Typical users / moments</h3><ul><li>Report maintainer editing invoice layout</li><li>Business partner adding logo or fields</li><li>Manager requesting a custom report</li></ul></div>
+<div class="side-card"><h3>TOC names from workbook</h3><ul><li>7. Reports and document layouts (6 sub-topics)</li></ul></div>
+<div class="side-card"><h3>Prototype note</h3><p>Card group labels are presentation groupings. The table uses the exact TOC names from the uploaded workbook so the prototype stays aligned with the proposed TOC.</p></div></div>
+</div>
+</div><div class="toc-panel hidden" id="custom-data">
+<div class="detail-head"><div class="eyebrow">Selected task-based TOC group</div><h2>Import, export and bulk updates</h2></div>
+<div class="detail-body">
+<div class="gcard"><div class="ghead">Workbook TOC names and topic order</div><table><tr class="span-start"><td class="tcell">Custom Web Query and WebAPI data access</td><td class="pcell"><div><div style="margin-bottom:4px;">Build a custom web query</div><div style="margin-bottom:4px;">Expose data through WebAPI</div><div style="margin-bottom:4px;">Understand who can access WebAPI queries</div></div></td></tr><tr class="span-start"><td class="tcell">Moving customisations between databases</td><td class="pcell"><div><div style="margin-bottom:4px;">Export customisations to a file</div><div style="margin-bottom:4px;">Import customisations into another database</div><div style="margin-bottom:4px;">Know when database objects (stored procedures) need manual setup first</div><div style="margin-bottom:4px;">Match Vision versions between source and destination</div></div></td></tr></table></div>
+<div>
+<div class="side-card"><h3>Why this group exists</h3><p>Bulk data tasks usually happen during implementation, cleanup or business change, so they fit the customisation/change entry point.</p></div>
+<div class="side-card"><h3>Typical users / moments</h3><ul><li>Admin importing setup data</li><li>Power user cleaning records</li><li>Consultant exporting data for review</li></ul></div>
+<div class="side-card"><h3>TOC names from workbook</h3><ul><li>9. Custom Web Query and WebAPI data access (3 sub-topics)</li><li>14. Moving customisations between databases (4 sub-topics)</li></ul></div>
+<div class="side-card"><h3>Prototype note</h3><p>Card group labels are presentation groupings. The table uses the exact TOC names from the uploaded workbook so the prototype stays aligned with the proposed TOC.</p></div></div>
+</div>
+</div><div class="toc-panel hidden" id="custom-ext">
+<div class="detail-head"><div class="eyebrow">Selected task-based TOC group</div><h2>Extensions, integrations and maintenance</h2></div>
+<div class="detail-body">
+<div class="gcard"><div class="ghead">Workbook TOC names and topic order</div><table><tr class="span-start"><td class="tcell">External applications, websites and third-party shortcuts</td><td class="pcell"><div><div style="margin-bottom:4px;">Understand the External Application Designer main window</div><div style="margin-bottom:4px;">Add an external program shortcut</div><div style="margin-bottom:4px;">Pass parameters to the external application</div></div></td></tr><tr class="span-start"><td class="tcell">Breakpoints and workflow automation</td><td class="pcell"><div><div style="margin-bottom:4px;">Understand what a breakpoint is</div><div style="margin-bottom:4px;">Add a custom button triggered by a breakpoint</div><div style="margin-bottom:4px;">Review the breakpoint listing</div><div style="margin-bottom:4px;">Know when to involve a Business Partner</div></div></td></tr><tr class="span-start"><td class="tcell">Command line breakpoints</td><td class="pcell"><div><div style="margin-bottom:4px;">Understand command line breakpoints</div><div style="margin-bottom:4px;">Configure a command line breakpoint</div><div style="margin-bottom:4px;">Example: automate a monthly report set</div></div></td></tr></table></div>
+<div>
+<div class="side-card"><h3>Why this group exists</h3><p>Extensions often support a changed business process or external system, so they need a separate entry point from daily workflows.</p></div>
+<div class="side-card"><h3>Typical users / moments</h3><ul><li>Business adopting mobile apps</li><li>Admin enabling an extension</li><li>Consultant checking integration path</li></ul></div>
+<div class="side-card"><h3>TOC names from workbook</h3><ul><li>8. External applications, websites and third-party shortcuts (3 sub-topics)</li><li>10. Breakpoints and workflow automation (4 sub-topics)</li><li>11. Command line breakpoints (3 sub-topics)</li></ul></div>
+<div class="side-card"><h3>Prototype note</h3><p>Card group labels are presentation groupings. The table uses the exact TOC names from the uploaded workbook so the prototype stays aligned with the proposed TOC.</p></div></div>
+</div>
+</div></div>
+<div class="utility"><div class="cap">Related presentation pages</div><div class="row"><a class="util-card" href="sybiz_landing_setup_admin.html"><div class="icon">🛡️</div><div><h3>Setup and Administration</h3><p>For base system setup before customisation.</p></div></a><a class="util-card" href="sybiz_user_guide_landing.html"><div class="icon">🛠️</div><div><h3>Workflow-Based User Guide</h3><p>For daily tasks that customisation may support.</p></div></a></div></div>
+</div>
+<a class="prototype-map" href="index.html">☰ Prototype map</a>
+<script>
+function showToc(id){
+  document.querySelectorAll('.toc-panel').forEach(p=>p.classList.add('hidden'));
+  document.getElementById(id).classList.remove('hidden');
+  document.querySelectorAll('.card[data-card]').forEach(c=>c.classList.remove('active'));
+  document.querySelector('.card[data-card="'+id+'"]').classList.add('active');
+}
+</script>
+</body></html>

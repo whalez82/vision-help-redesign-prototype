@@ -1,0 +1,71 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Processing a customer order — Sybiz Vision Help</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/prototype.css"></head><body><div class="frame"><div class="navbar"><div class="brand">Sybiz Vision Help — presentation prototype</div><div class="links"><a href="sybiz_help_home.html">Home</a><a href="vision_entry_journeys.html">Entry journeys</a><a href="sybiz_user_guide_landing.html">Workflow guide</a><a href="sybiz_topic_preview.html">Topic preview</a></div></div>
+<div class="hero"><div class="kicker">Example F1-mapped topic</div><h1>Processing a customer order</h1><p>This topic preview shows how an existing F1-mapped topic can be redesigned without breaking the help route: screenshots from the existing guide are retained, while the content is delivered through two compact tabs.</p></div>
+<div class="content">
+  <div class="callout-row"><div class="callout"><h3>F1 route</h3><div class="path"><span>New - Sales Order</span><b>→</b><span>F1</span><b>→</b><span>This topic</span></div><p>Supports existing context-sensitive help mapping.</p></div><div class="callout"><h3>Workflow route</h3><div class="path"><span>Home</span><b>→</b><span>Workflow Guide</span><b>→</b><span>Sales</span><b>→</b><span>Quote and order</span></div><p>Gives a business-flow path to the same topic.</p></div></div>
+  <div class="topic-shell">
+    <div class="topic-shell-head">
+      <div class="topic-crumbs">Vision User Guide &nbsp;›&nbsp; Sales and Order Management &nbsp;›&nbsp; <span class="here">Processing a customer order</span></div>
+      <div class="topic-title">Processing a customer order</div>
+      <p class="topic-lede">Use this topic when a customer request needs to become a formal sales order. The order can then move to picking, delivery, invoicing, enquiry or further review.</p>
+      <div class="topic-meta"><span class="menu-chip">F1 screen: New - Sales Order</span><span class="menu-chip">Workflow group: Quote and order</span><span class="menu-chip">Menu path: Debtors › Transactions › Order</span></div>
+    </div>
+    <div class="tabs"><button class="active" data-tab-button-group="topic" data-tab-target="tab-how" onclick="setTab('topic','tab-how')">How to</button><button data-tab-button-group="topic" data-tab-target="tab-reference" onclick="setTab('topic','tab-reference')">Menu &amp; field reference</button></div>
+    <div class="tabbox">
+      <div id="tab-how" class="tabpane active topic-pane" data-tab-group="topic">
+        <div class="topic-split">
+          <div>
+            <h2>Create the order</h2>
+            <ol class="steps-visual">
+              <li>Click the <b>Debtors</b> ledger tab.</li>
+              <li>In the <b>Transactions</b> group on the ribbon bar, click <b>Order</b>.
+                <figure class="shot narrow"><img src="assets/images/debtors-order-ribbon.png" alt="Transactions group on the Debtors ribbon bar with the Order button"><figcaption>The Transactions group on the Debtors ribbon bar</figcaption></figure>
+              </li>
+              <li>The <b>New – Sales Order</b> window is displayed.
+                <figure class="shot mid"><img src="assets/images/new-sales-order-window.jpg" alt="The New Sales Order window showing the customer, order lines and totals"><figcaption>The New – Sales Order window</figcaption></figure>
+              </li>
+              <li>Create the sales order using one of the available methods: open an accepted quote, enter the details manually, base the order on a previous order, or use a template.</li>
+              <li>Check the order lines, delivery details, references, totals and any order-specific notes before saving or processing.</li>
+            </ol>
+            <div class="inline-result"><strong>Result:</strong> a customer order is saved or processed. It can then be used for picking, delivery, invoicing, enquiry or review, depending on the user's workflow and security rights.</div>
+            <h3>Common next actions</h3>
+            <div class="next-links"><a href="#">Pick a sales order</a><a href="#">Process a sales delivery</a><a href="#">Create a customer invoice</a><a href="#">Review outstanding sales orders</a></div>
+          </div>
+          <div>
+            <h3>Ways to create the order</h3>
+            <div class="option-grid">
+              <div class="option-card"><strong>Accepted quote</strong><span>Add an accepted customer quote to the order.</span></div>
+              <div class="option-card"><strong>Manual entry</strong><span>Enter customer and order line details directly.</span></div>
+              <div class="option-card"><strong>Previous order</strong><span>Use an earlier order as a starting point.</span></div>
+              <div class="option-card"><strong>Template</strong><span>Use a saved sales document template.</span></div>
+            </div>
+            <div class="note"><strong>Note:</strong> if back-to-back ordering has been configured for the product, processing the order may automatically generate a purchase order for the product.</div>
+            <div class="note"><strong>Note:</strong> if the order is created in error, the Options tab contains an option to convert the order to a quote. This can only occur if the order has not been processed.</div>
+          </div>
+        </div>
+        <h2>Add a processed customer quote</h2>
+        <ol class="steps-visual">
+          <li>From the <b>File</b> area on the ribbon bar, click <b>Document</b>. The Add Sales Document window is displayed.
+            <figure class="shot mid"><img src="assets/images/add-sales-document-window.jpg" alt="The Add Sales Document window with search criteria and results list"><figcaption>The Add Sales Document window</figcaption></figure>
+          </li>
+          <li>Select the criteria from the drop-down lists and click <b>Search</b>. Quotes matching the criteria are displayed.</li>
+          <li>Select the quote from the results list and click <b>OK</b>. The selected item is added to the grid.</li>
+          <li>Edit the items on the order as required, then save or process the order according to your workflow.</li>
+        </ol>
+        <div class="warn"><strong>Warning:</strong> only accepted quotes can be used in orders. Once a quote has been used in an order, it cannot be reused unless the order is not progressed and has been cleansed.</div>
+        <div class="warn"><strong>Warning:</strong> users may not be able to adjust the price or discount, depending on their security settings. If <b>Can Override Product Price</b> is not set in Debtor Transactions, the user cannot change either the price or discount fields.</div>
+      </div>
+      <div id="tab-reference" class="tabpane topic-pane" data-tab-group="topic">
+        <h2>Menu &amp; field reference</h2>
+        <p>This tab keeps the reference-style information available for users who arrive from F1 and need to confirm where the window lives, what controls are used, and which fields may affect the task.</p>
+        <div class="ref-grid">
+          <div class="ref-card"><h3>Where this lives in Vision</h3><table class="ref-table"><tr><td>Ledger tab</td><td>Debtors</td></tr><tr><td>Ribbon group</td><td>Transactions</td></tr><tr><td>Command</td><td>Order</td></tr><tr><td>Window</td><td>New – Sales Order</td></tr><tr><td>Workflow group</td><td>Sales and Order Management › Quote and order</td></tr></table></div>
+          <div class="ref-card"><h3>Ribbon and window commands</h3><table class="ref-table"><tr><td>File › Document</td><td>Add an accepted sales quote or another sales document to the order.</td></tr><tr><td>Options tab</td><td>Contains order-specific options, including converting an unprocessed order back to a quote where allowed.</td></tr><tr><td>Search</td><td>Used in the Add Sales Document window to find matching quotes.</td></tr><tr><td>OK</td><td>Adds the selected sales document to the order grid.</td></tr></table></div>
+          <div class="ref-card"><h3>Fields users usually check</h3><table class="ref-table"><tr><td>Customer</td><td>The customer for the order.</td></tr><tr><td>Order lines</td><td>Products or services, quantities, prices and discounts.</td></tr><tr><td>Tax</td><td>Tax applied to the order lines and totals.</td></tr><tr><td>Delivery details</td><td>Delivery method, date and related delivery information.</td></tr><tr><td>References</td><td>Customer or internal references used to identify the order.</td></tr></table></div>
+          <div class="ref-card"><h3>Conditions and related topics</h3><table class="ref-table"><tr><td>Accepted quotes</td><td>Only accepted quotes can be added to an order.</td></tr><tr><td>Security rights</td><td>Price and discount changes may be restricted.</td></tr><tr><td>Related topics</td><td>Processing a customer quote · Deposits · Customer order picking and packing · Processing an invoice</td></tr><tr><td>Same topic route</td><td>Can be reached from F1 or from the workflow-based TOC.</td></tr></table></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-nav"><a href="sybiz_landing_sales_order.html">← Back: Sales and Order Management</a><a href="index.html">Back to prototype map →</a></div>
+</div>
+</div><a class="prototype-map" href="index.html">☰ Prototype map</a><script src="assets/prototype.js"></script></body></html>
