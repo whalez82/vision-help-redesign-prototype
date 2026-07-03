@@ -46,7 +46,14 @@ body{font-family:var(--font-body); color:var(--text); background:#EDF0F4;}
 .util-card h3{font-weight:600; font-size:13.5px; margin-bottom:2px;}
 .util-card h3 .old{font-weight:400; color:var(--text-3); font-size:11.5px;}
 .util-card p{font-size:12px; color:var(--text-2); line-height:1.55;}
-.jnote{margin:18px 36px 0;background:#FCFDFE;border:1px dashed var(--teal-line);border-radius:9px;padding:10px 14px;font-size:12px;color:var(--text-2);}.jnote a{color:var(--teal-dark);font-weight:600;text-decoration:none;}.jnote .tag{font-size:9.5px;font-weight:700;color:var(--teal-dark);text-transform:uppercase;letter-spacing:.05em;margin-right:8px;background:var(--teal-tint);border-radius:4px;padding:2px 6px;}</style>
+.user-behind{margin:18px 36px 0;border:1px solid var(--teal-line);border-radius:14px;background:linear-gradient(135deg,#FCFDFE,#E9F8F7);padding:18px 20px;display:grid;grid-template-columns:1.2fr .9fr;gap:18px;align-items:center;}
+.user-behind .tag{display:inline-block;font-size:10px;font-weight:700;color:var(--teal-dark);text-transform:uppercase;letter-spacing:.06em;background:#fff;border:1px solid var(--teal-line);border-radius:999px;padding:4px 8px;margin-bottom:8px;}
+.user-behind h2{font-family:var(--font-head);font-weight:600;font-size:17px;color:var(--text);margin-bottom:6px;}
+.user-behind p{font-size:13px;line-height:1.6;color:var(--text-2);}
+.user-behind .chips{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:12px;}
+.user-behind .chips span{font-size:11.5px;color:var(--teal-dark);background:#fff;border:1px solid var(--teal-line);border-radius:999px;padding:5px 8px;}
+.user-behind a{display:inline-flex;align-items:center;gap:6px;color:#fff;background:var(--navy);font-weight:600;text-decoration:none;border-radius:8px;padding:9px 12px;font-size:12.5px;}
+@media (max-width:760px){.user-behind{grid-template-columns:1fr;margin:14px 20px 0}.grid{padding-left:20px;padding-right:20px}.section-cap{padding-left:20px}.utility{padding-left:20px;padding-right:20px}}</style>
 </head>
 <body>
 
@@ -60,7 +67,21 @@ body{font-family:var(--font-body); color:var(--text); background:#EDF0F4;}
   <section class="hero">
     <h1>What are you looking for?</h1>
     <div class="search">&#128269;&nbsp; Search articles, for example "create a sales order"</div>
-  </section><div class="jnote"><span class="tag">Design note</span>Why these five doors? <a href="vision_entry_journeys.html#home">See the user behind each main category &#8594;</a></div>
+  </section>
+
+  <section class="user-behind">
+    <div>
+      <span class="tag">Design idea</span>
+      <h2>See the user behind each main category</h2>
+      <p>The five Home cards are not just content buckets. Each one represents a different user need: learning Vision, setting it up, completing daily work, adapting the system, or checking terminology.</p>
+    </div>
+    <div>
+      <div class="chips">
+        <span>New user</span><span>Admin user</span><span>Daily task user</span><span>Customisation user</span><span>Terminology lookup</span>
+      </div>
+      <a href="vision_entry_journeys.html">Open user entry journeys &#8594;</a>
+    </div>
+  </section>
 
   <div class="section-cap">Main category</div>
   <div class="grid">
@@ -115,6 +136,6 @@ body{font-family:var(--font-body); color:var(--text); background:#EDF0F4;}
 
 </div>
 
-<a href="index.html" style="position:fixed;right:18px;bottom:18px;z-index:99;background:#0A1133;color:#fff;font-family:Inter,sans-serif;font-size:12px;font-weight:600;padding:9px 14px;border-radius:20px;text-decoration:none;box-shadow:0 2px 10px rgba(10,17,51,.25);">&#9776; Prototype map</a>
+<a href="index.html" style="position:fixed;right:18px;bottom:18px;z-index:99;background:#0A1133;color:#fff;font-family:Inter,sans-serif;font-size:12px;font-weight:600;padding:9px 14px;border-radius:20px;text-decoration:none;box-shadow:0 2px 10px rgba(10,17,51,.25);">&#8962; Prototype home</a>
 </body>
 </html>
